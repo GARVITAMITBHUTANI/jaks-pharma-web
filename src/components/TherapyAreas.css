@@ -1,0 +1,65 @@
+.therapy-section {
+  background-color: var(--bg-color);
+}
+
+.therapy-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.therapy-image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.therapy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.therapy-card {
+  background: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.therapy-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.therapy-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.therapy-name {
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .therapy-container {
+    grid-template-columns: 1fr;
+  }
+  .therapy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .therapy-grid {
+    grid-template-columns: 1fr;
+  }
+}

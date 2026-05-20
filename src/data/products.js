@@ -1,0 +1,32 @@
+export const products = [
+  { id: 'CLN', name: 'CLINDERA-N GEL', category: 'Gels', image: '', description: 'Advanced dermatological gel formulation.', ingredients: ['Clindamycin', 'Nicotinamide'] },
+  { id: 'EGL', name: 'EGLANCE-UNDER EYE SERUM', category: 'Serums', image: '', description: 'Revitalizing under-eye treatment to combat dark circles and puffiness.', ingredients: ['Peptides', 'Caffeine'] },
+  { id: 'EBR', name: 'EMOLUX BODY BAR', category: 'Body Care', image: '', description: 'Gentle syndet bar for deep cleansing and moisturizing.', ingredients: ['Syndet Base', 'Moisturizers'] },
+  { id: 'EOC', name: 'EMOLUX OC-OIL CONTROL MOISTURISER', category: 'Moisturizers', image: '', description: 'Oil control moisturizer formulated for acne-prone skin.', ingredients: ['Niacinamide', 'Zinc PCA'] },
+  { id: 'EMO', name: 'EMOLUX-MOISTURISER', category: 'Moisturizers', image: '', description: 'Intensive hydration for dry and sensitive skin.', ingredients: ['Shea Butter', 'Ceramides'] },
+  { id: 'FVC', name: 'FACIOX C-SERUM', category: 'Serums', image: '', description: 'Potent Vitamin C serum for skin brightening and antioxidant protection.', ingredients: ['Vitamin C', 'Hyaluronic Acid'] },
+  { id: 'FFW', name: 'FACIOX FACE WASH CREAM', category: 'Face Wash', image: '', description: 'Creamy face wash for deep yet gentle cleansing.', ingredients: ['Glycolic Acid', 'Salicylic Acid'] },
+  { id: 'FHA', name: 'FACIOX HA-SERUM', category: 'Serums', image: '', description: 'Deeply hydrating Hyaluronic Acid serum.', ingredients: ['Hyaluronic Acid 2%'] },
+  { id: 'FSB', name: 'FACIOX SKIN BRITENING', category: 'Serums', image: '', description: 'Targeted formula for reducing hyperpigmentation.', ingredients: ['Kojic Acid', 'Alpha Arbutin'] },
+  { id: 'FUV', name: 'FACIOX UV-SUNSCREEN', category: 'Sunscreen', image: '', description: 'Broad-spectrum SPF 50+ protection against UVA/UVB.', ingredients: ['Zinc Oxide', 'Titanium Dioxide'] },
+  { id: 'FLU', name: 'FLUTIJAKS 30 GM', category: 'Creams', image: '', description: 'Topical corticosteroid cream (30g).', ingredients: ['Fluticasone Propionate'] },
+  { id: 'FLU_N', name: 'FLUTIJAKS 10 GM', category: 'Creams', image: '', description: 'Topical corticosteroid cream (10g).', ingredients: ['Fluticasone Propionate'] },
+  { id: 'FLUC-N', name: 'FLUTIJAKS CREAM NEW', category: 'Creams', image: '', description: 'Advanced fluticasone cream formulation.', ingredients: ['Fluticasone Propionate'] },
+  { id: 'FLUT20L', name: 'FLUTIJAKS LOTION 20ML', category: 'Lotions', image: '', description: 'Topical corticosteroid lotion for easy spreadability.', ingredients: ['Fluticasone Propionate'] },
+  { id: 'FLU-M', name: 'FLUTIJAKS-M', category: 'Creams', image: '', description: 'Combination topical therapy.', ingredients: ['Fluticasone', 'Miconazole'] },
+  { id: 'JSB', name: 'JAKSIT SB 130', category: 'Tablets', image: '', description: 'Advanced oral antifungal therapy (130mg).', ingredients: ['Itraconazole'] },
+  { id: 'JSB-N', name: 'JAKSIT SB 130 !new', category: 'Tablets', image: '', description: 'Newly formulated oral antifungal therapy (130mg).', ingredients: ['Itraconazole'] },
+  { id: 'JSB65', name: 'JAKSIT SB 65', category: 'Tablets', image: '', description: 'Oral antifungal therapy (65mg).', ingredients: ['Itraconazole'] },
+  { id: 'KER_M', name: 'KERAJAKS M 2.5 MG', category: 'Tablets', image: '', description: 'Oral hair growth therapy (2.5mg).', ingredients: ['Minoxidil', 'Biotin'] },
+  { id: 'KER_M_TAB', name: 'KERAJAKS M 5 MG', category: 'Tablets', image: '', description: 'Oral hair growth therapy (5mg).', ingredients: ['Minoxidil', 'Biotin'] },
+  { id: 'KER', name: 'KERAJAKS-HAIR SERUM', category: 'Hair Care', image: '', description: 'Topical hair growth serum.', ingredients: ['Procapil', 'Redensyl'] },
+  { id: 'LEV-T', name: 'LEVOJAKS 10 MG', category: 'Tablets', image: '', description: 'Antihistamine for allergy relief (10mg).', ingredients: ['Levocetirizine'] },
+  { id: 'LEVO', name: 'LEVOJAKS 5 mg', category: 'Tablets', image: '', description: 'Antihistamine for allergy relief (5mg).', ingredients: ['Levocetirizine'] },
+  { id: 'LEVOM', name: 'LEVOJAKS M', category: 'Tablets', image: '', description: 'Combination therapy for allergic rhinitis.', ingredients: ['Levocetirizine', 'Montelukast'] },
+  { id: 'LLI', name: 'LULIJAKS MAX', category: 'Creams', image: '', description: 'Potent topical antifungal cream.', ingredients: ['Luliconazole 1%'] },
+  { id: 'NIG', name: 'NIGRINIL CREAM', category: 'Creams', image: '', description: 'Specialized cream for dark patches and acanthosis nigricans.', ingredients: ['Lactic Acid', 'Urea', 'Retinol'] },
+  { id: 'RSBT', name: 'RELUMIA SKIN BRIGHTENING TABLET', category: 'Tablets', image: '', description: 'Oral supplement for systemic skin brightening.', ingredients: ['L-Glutathione', 'Vitamin C'] },
+];
+
+// Extract unique categories for the filter tabs
+export const productCategories = ["All", ...new Set(products.map(p => p.category))];
