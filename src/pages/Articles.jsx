@@ -6,8 +6,8 @@ const Articles = () => {
   const [activeTab, setActiveTab] = useState('All');
   const tabs = ['All', 'Blog', 'News & Updates', 'Resources', 'Videos'];
 
-  const filteredArticles = activeTab === 'All' 
-    ? articles 
+  const filteredArticles = activeTab === 'All'
+    ? articles
     : articles.filter(article => article.category === activeTab);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Articles = () => {
   return (
     <main className="py-24 lg:py-32 bg-[#F9FAFB] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="text-center mb-16 reveal section-visible">
           <div className="inline-flex items-center gap-2 mb-4 justify-center">
             <span className="h-px w-8 bg-[#F37021]"></span>
@@ -37,11 +37,10 @@ const Articles = () => {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeTab === tab 
-                  ? 'bg-[#00529B] text-white shadow-md' 
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === tab
+                  ? 'bg-[#00529B] text-white shadow-md'
                   : 'bg-white text-[#6B7280] border border-gray-200 hover:border-[#00529B] hover:text-[#00529B]'
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -78,7 +77,7 @@ const Articles = () => {
                 <div className="mt-auto">
                   <Link to={`/article/${article.id}`} className="group/btn inline-flex items-center text-sm font-semibold text-[#F37021] hover:text-[#D9611B] transition-colors">
                     {article.category === 'Videos' ? 'Watch Video' : 'Read Full Article'}
-                    <svg className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+                    <svg className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
                   </Link>
                 </div>
               </div>

@@ -1,88 +1,243 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+// Relative imports targeting your local assets folder cleanly
+import relumiaImg from '../assets/Relumia.png';
+import flutijaksLotionImg from '../assets/Flutijaks.png';
+import clinderaGelImg from '../assets/Clindera.png';
+
+const slides = [
+  {
+    id: 1,
+    tagline: 'Emerging Pharma Company of the Year',
+    titleLine1: 'Precision Formulations. ',
+    titleHighlight1: 'Clinical Luxury.',
+    titleLine2: 'Healthcare ',
+    titleHighlight2: 'Redefined.',
+    description: 'Fusing advanced dermatological science with high-performance healthcare solutions to deliver visible, life-changing results.',
+    image: 'https://images.unsplash.com/photo-1728727217834-b190862837a3?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=800',
+    stats1: '2023',
+    stats1Label: 'Founded',
+    stats2: 'Award',
+    stats2Label: 'Winner',
+    cropClass: 'object-center'
+  },
+  {
+    id: 2,
+    tagline: 'Advanced Skin Brightening Science',
+    titleLine1: 'Clinical Luxury. ',
+    titleHighlight1: 'Advanced',
+    titleLine2: 'Cellular ',
+    titleHighlight2: 'Antioxidants.',
+    description: 'Scientifically formulated skin brightening nutraceutical utilizing premium Opitac® L-Glutathione from Japan to combat hyperpigmentation and oxidative stress.',
+    image: relumiaImg,
+    stats1: '500mg',
+    stats1Label: 'Glutathione',
+    stats2: 'Japan',
+    stats2Label: 'Opitac® Res',
+    cropClass: 'object-center'
+  },
+  {
+    id: 3,
+    tagline: 'Pioneering Firsts',
+    titleLine1: 'Visible Results. ',
+    titleHighlight1: 'Targeted',
+    titleLine2: 'Rapid Skin ',
+    titleHighlight2: 'Relief.',
+    description: 'Proud to introduce market-disrupting breakthrough formulations like India\'s very first Fluticasone Propionate lotion formulation.',
+    image: flutijaksLotionImg,
+    stats1: '1st',
+    stats1Label: 'In India',
+    stats2: '20ml',
+    stats2Label: 'Lotion Pack',
+    cropClass: 'object-center'
+  },
+  {
+    id: 4,
+    tagline: 'Dermatology, Advanced',
+    titleLine1: 'Next Gen Therapy. ',
+    titleHighlight1: 'Acne Repair.',
+    titleLine2: 'Clearer Skin ',
+    titleHighlight2: 'Texture.',
+    description: 'Precision-engineered combination treatment merging Clindamycin and Nicotinamide to clear active acne, regulate sebum, and repair vulnerable barriers.',
+    image: clinderaGelImg,
+    stats1: 'Dual',
+    stats1Label: 'Actives',
+    stats2: '20g',
+    stats2Label: 'Gel Tube',
+    cropClass: 'object-top'
+  },
+  {
+    id: 5,
+    tagline: 'The 90-Day Execution Standard',
+    titleLine1: 'Science Meets ',
+    titleHighlight1: 'Sophistication.',
+    titleLine2: 'Doctor Trusted ',
+    titleHighlight2: 'Solutions.',
+    description: 'Driven by a high-performance leadership philosophy, we turn medical insights into active clinical solutions faster than industry standards.',
+    image: '',
+    stats1: 'Active',
+    stats1Label: 'Solutions',
+    stats2: 'Doctor',
+    stats2Label: 'Trusted',
+    cropClass: 'object-top'
+  }
+];
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNextSlide();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handlePrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const handleNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const slide = slides[currentSlide];
+
   return (
-    <section id="top" className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img alt="Background" className="w-full h-full object-cover" src="https://static.prod-images.emergentagent.com/jobs/1ba2800b-b251-4dca-825e-67f5e5f01013/images/a6dcbde07ac657938eb5ef43d5d2a6134141f46cd4f5160b48762e54f0719e8e.png" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40"></div>
-      </div>
-      <div className="absolute top-20 right-10 w-72 h-72 bg-[#F37021]/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#00529B]/5 rounded-full blur-3xl"></div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-0 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="space-y-8">
-            <div className="animate-fadeInUp">
-              <span className="inline-flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.2em] font-bold text-[#F37021] mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-flask-conical" aria-hidden="true">
-                  <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path>
-                  <path d="M6.453 15h11.094"></path>
-                  <path d="M8.5 2h7"></path>
-                </svg>
-                Advanced Pharma &amp; Derma Care
-              </span>
-            </div>
-            <h1 className="animate-fadeInUp delay-100 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[1.05] font-extrabold text-[#111827]">
-              Your<span style={{ display: 'contents' }}> </span><span className="text-[#00529B]">Wellness</span>,<br/>
-              Our<span style={{ display: 'contents' }}> </span><span className="relative inline-block">
-                <span className="text-[#F37021]">Commitment</span>
-                <svg className="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 200 8">
+    <section id="top" className="relative min-h-screen lg:h-screen w-full flex flex-col bg-[#faf2f2] text-[#111827] overflow-hidden pt-16 group/section">
+
+      {/* INNER CONTENT GRID WRAPPER */}
+      <div className="flex-grow w-full flex flex-col lg:flex-row items-center lg:items-stretch justify-between">
+
+        {/* LEFT NAVIGATION BUTTON */}
+        <button
+          onClick={handlePrevSlide}
+          className="absolute left-4 top-[20%] sm:top-[25%] lg:top-1/2 -translate-y-1/2 z-40 flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white text-[#00529B] hover:bg-[#00529B] hover:text-white border-2 border-[#00529B] rounded-none shadow-md transition-all duration-200 cursor-pointer outline-none"
+          aria-label="Previous Slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+
+        {/* RIGHT NAVIGATION BUTTON */}
+        <button
+          onClick={handleNextSlide}
+          className="absolute right-4 top-[20%] sm:top-[25%] lg:top-1/2 -translate-y-1/2 z-40 flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white text-[#00529B] hover:bg-[#00529B] hover:text-white border-2 border-[#00529B] rounded-none shadow-md transition-all duration-200 cursor-pointer outline-none"
+          aria-label="Next Slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+
+        {/* LEFT CONTENT PANEL */}
+        <div className="w-full lg:w-[50%] flex flex-col justify-center items-start px-6 sm:px-12 lg:px-20 py-8 sm:py-12 lg:py-0 space-y-4 sm:space-y-5 relative z-20 order-2 lg:order-1">
+
+          <div className="h-[24px] overflow-hidden flex items-center">
+            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-bold text-[#F37021]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"></path>
+                <path d="M6.453 15h11.094"></path>
+                <path d="M8.5 2h7"></path>
+              </svg>
+              {slide.tagline}
+            </span>
+          </div>
+
+          <div className="w-full min-h-[85px] sm:min-h-[110px] xl:min-h-[145px] flex items-center overflow-hidden">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.1] font-extrabold text-[#111827] whitespace-pre-line">
+              {slide.titleLine1}<span style={{ display: 'contents' }}> </span><span className="text-[#00529B]">{slide.titleHighlight1}</span><br />
+              {slide.titleLine2}<span style={{ display: 'contents' }}> </span><span className="relative inline-block">
+                <span className="text-[#F37021]">{slide.titleHighlight2}</span>
+                <svg className="absolute -bottom-1.5 left-0 w-full" height="6" viewBox="0 0 200 8" preserveAspectRatio="none">
                   <path d="M0 6 Q50 0, 100 4 Q150 8, 200 2" fill="none" stroke="#F37021" strokeWidth="3" strokeLinecap="round"></path>
                 </svg>
               </span>
             </h1>
-            <p className="animate-fadeInUp delay-300 text-base sm:text-lg leading-relaxed text-slate-600 max-w-lg">
-              Transforming healthcare through cutting-edge pharmaceutical research, breakthrough treatments, and an unwavering commitment to patient well-being.
-            </p>
-            <div className="animate-fadeInUp delay-400 flex flex-wrap gap-4">
-              <button onClick={() => { document.querySelector('#products').scrollIntoView({ behavior: 'smooth' }); }} className="bg-[#00529B] text-white hover:bg-[#003E75] hover:-translate-y-0.5 transition-all duration-300 rounded-full px-8 py-3.5 font-semibold shadow-md hover:shadow-lg text-sm sm:text-base cursor-pointer">Explore Products</button>
-              <button onClick={() => { document.querySelector('#about').scrollIntoView({ behavior: 'smooth' }); }} className="border-2 border-[#00529B] text-[#00529B] hover:bg-[#EAF2F8] transition-all duration-300 rounded-full px-8 py-3.5 font-semibold text-sm sm:text-base cursor-pointer">Learn More</button>
-            </div>
-            <div className="animate-fadeInUp delay-500 flex items-center gap-6 pt-4">
-              <div className="flex items-center gap-2 text-sm text-slate-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield text-[#00529B]" aria-hidden="true">
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                </svg>
-                <span>ISO Certified</span>
-              </div>
-              <div className="w-px h-5 bg-gray-300"></div>
-              <div className="flex items-center gap-2 text-sm text-slate-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield text-[#00529B]" aria-hidden="true">
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                </svg>
-                <span>GMP Compliant</span>
-              </div>
-              <div className="w-px h-5 bg-gray-300"></div>
-              <div className="flex items-center gap-2 text-sm text-slate-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield text-[#00529B]" aria-hidden="true">
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                </svg>
-                <span>WHO-GMP</span>
-              </div>
-            </div>
           </div>
-          <div className="relative hidden lg:block animate-fadeInUp delay-300">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-[#00529B]/10 to-[#F37021]/10 rounded-[2rem] blur-2xl"></div>
-              <img alt="Healthy glowing skin" className="relative w-full rounded-[2rem] object-cover aspect-[3/4] shadow-2xl" src="https://images.unsplash.com/photo-1728727217834-b190862837a3?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixlib=rb-4.1.0&amp;q=85&amp;w=800" />
-              <div className="absolute -left-8 top-1/3 bg-white rounded-2xl p-4 shadow-xl animate-float">
-                <div className="text-3xl font-extrabold text-[#00529B]">19+</div>
-                <div className="text-xs font-medium text-slate-500">Products</div>
-              </div>
-              <div className="absolute -right-6 bottom-1/4 bg-white rounded-2xl p-4 shadow-xl animate-float delay-300">
-                <div className="text-3xl font-extrabold text-[#F37021]">9+</div>
-                <div className="text-xs font-medium text-slate-500">Therapy Areas</div>
-              </div>
-            </div>
+
+          <div className="w-full min-h-[55px] sm:min-h-[45px] flex items-start overflow-hidden">
+            <p className="text-[11px] sm:text-xs leading-relaxed text-slate-600 max-w-md font-sans">
+              {slide.description}
+            </p>
+          </div>
+
+          <div className="inline-flex items-center gap-2 bg-[#00529B]/5 border border-[#00529B]/10 px-3 py-2 rounded-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00529B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <span className="text-[10px] sm:text-xs font-bold text-[#00529B] tracking-wide">
+              Advancing Dermatology &amp; Aesthetic Science
+            </span>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 pt-1 w-full sm:w-auto">
+            <button
+              onClick={() => { document.querySelector('#products').scrollIntoView({ behavior: 'smooth' }); }}
+              className="w-full sm:w-auto bg-[#00529B] text-white hover:bg-[#003E75] transition-all duration-200 px-6 py-2.5 text-xs font-semibold shadow-sm rounded-none border-none cursor-pointer"
+            >
+              Shop Collection
+            </button>
+            <button
+              onClick={() => { document.querySelector('#about').scrollIntoView({ behavior: 'smooth' }); }}
+              className="w-full sm:w-auto border-2 border-[#00529B] text-[#00529B] hover:bg-white transition-all duration-200 px-6 py-2.5 text-xs font-semibold rounded-none cursor-pointer"
+            >
+              Discover More
+            </button>
           </div>
         </div>
+
+        {/* RIGHT DISPLAY PANEL */}
+        <div className="w-full lg:w-[50%] relative aspect-[16/10] lg:aspect-auto min-h-[240px] sm:min-h-[360px] lg:min-h-full overflow-hidden order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-gray-200/20 bg-black/[0.02]">
+
+          {slide.image ? (
+            <img
+              alt="Hero Slide Showcase"
+              className={`w-full h-full object-cover ${slide.cropClass} absolute inset-0 transition-all duration-700`}
+              src={slide.image}
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center bg-[#00529B]/5">
+              <span className="text-[9px] font-black tracking-[0.3em] uppercase text-[#00529B]/30 animate-pulse">
+                JAKS Clinical Asset Frame
+              </span>
+            </div>
+          )}
+
+          {/* Floating Stat Card 1 */}
+          <div className="absolute left-4 bottom-4 sm:left-6 sm:bottom-6 bg-white border border-gray-100 px-4 py-2 sm:px-5 sm:py-2.5 rounded-none z-20 shadow-sm">
+            <div className="text-lg sm:text-xl font-black text-[#00529B] leading-none">{slide.stats1}</div>
+            <div className="text-[9px] font-medium text-slate-500 mt-0.5 leading-none">{slide.stats1Label}</div>
+          </div>
+
+          {/* Floating Stat Card 2 */}
+          <div className="absolute right-4 top-4 sm:right-6 sm:top-6 bg-white border border-gray-100 px-4 py-2 sm:px-5 sm:py-2.5 rounded-none z-20 shadow-sm">
+            <div className="text-lg sm:text-xl font-black text-[#F37021] leading-none">{slide.stats2}</div>
+            <div className="text-[9px] font-medium text-slate-500 mt-0.5 leading-none">{slide.stats2Label}</div>
+          </div>
+        </div>
+
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-down text-[#00529B] opacity-50" aria-hidden="true">
-          <path d="M12 5v14"></path>
-          <path d="m19 12-7 7-7-7"></path>
-        </svg>
+
+      {/* DEDICATED BOTTOM PAGINATION TRACK */}
+      <div className="w-full flex items-center justify-center py-4 bg-[#FAF2F2] border-t border-gray-200/10 z-20">
+        <div className="flex items-center gap-2.5">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 border-none cursor-pointer ${currentSlide === index ? 'bg-[#F37021] scale-125 w-5' : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
+
     </section>
   );
 };

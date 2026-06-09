@@ -1,22 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800,900&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #00529B;
-  --color-accent: #F37021;
+  /* Conscious Chemist D2C Theme Setup inside Tailwind v4.0 */
+  --color-primary: #111827;
+  /* Deep near-black for bold typography */
+  --color-accent: #3182CE;
+  /* Clinical Pop Blue */
   --font-sans: 'Manrope', sans-serif;
   --font-heading: 'Cabinet Grotesk', 'Manrope', sans-serif;
 }
 
 @layer base {
   :root {
-    --jaks-blue: #00529B;
-    --jaks-blue-dark: #003A6E;
-    --jaks-blue-light: #EAF2F8;
-    --jaks-orange: #F37021;
-    --jaks-orange-dark: #D9611B;
+    /* 1. Syncing your GitHub theme tokens with the updated D2C palette */
+    --jaks-blue: #111827;
+    --jaks-blue-dark: #000000;
+    --jaks-blue-light: #F0F5F8;
+    /* Default light token shifts to the clean hydration tint */
+    --jaks-orange: #111827;
+    --jaks-orange-dark: #000000;
+
+    /* 2. Global Pastel Canvas Control Token 
+       👉 Change your master website background tone here:
+       For Soft Blue Tint: #F0F5F8 
+       For Soft Pink Tint: #FAF2F2 
+    */
+    --global-site-tint: #F0F5F8;
   }
 
   html {
@@ -27,123 +39,113 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #111827;
-    background: #FFFFFF;
+    /* 3. Forces the beautiful, uniform background tint across your original repository pages */
+    background-color: var(--global-site-tint) !important;
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
-  }
-
-  ::selection {
-    background: var(--jaks-blue);
-    color: white;
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--jaks-blue);
-    border-radius: 3px;
+    letter-spacing: -0.03em;
+    /* Punchy, tight tracking characteristic of premium skincare */
   }
 }
 
 @layer utilities {
+
+  /* Flat, sharp block header navbar override to clean out transparency gaps */
   .glass {
-    backdrop-filter: blur(20px);
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: #FFFFFF !important;
+    backdrop-filter: none !important;
+    border-bottom: 2px solid #111827 !important;
   }
 
+  /* Removes text gradients globally to maintain rich, solid modern ink statements */
   .gradient-text {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to bottom right, #00529B, #F37021);
+    background-image: none !important;
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    color: #111827 !important;
+    font-weight: 900;
+  }
+
+  /* Flat Catalog Grid Card Blocks 
+     Forces your product listings to inherit sharp corners, clean boundaries,
+     and subtle modern elevations on interactive focus states.
+  */
+  .product-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 0px !important;
+    /* Zero curves for that clean, flat retail grid look */
+    padding: 0px !important;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: #111827 !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  /* Minimal Category Navigation Tab Activation lines */
+  .category-tab {
+    transition: all 0.2s ease !important;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    color: #9CA3AF !important;
+  }
+
+  .category-tab.active {
+    color: #111827 !important;
+  }
+
+  .category-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #111827 !important;
+    /* Solid thick black accent underline */
   }
 }
 
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ==========================================================================
+   4. Section Interception Layer
+   Cleans up original page backgrounds seamlessly so the canvas tint bleeds through
+   ========================================================================== */
+main,
+section,
+.bg-[#F9FAFB],
+.bg-gray-50 {
+  background-color: transparent !important;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Ensures detail blocks inherit a clean backdrop matching the aesthetic */
+.bg-white {
+  background-color: #FFFFFF;
 }
 
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-40px); }
-  to { opacity: 1; transform: translateX(0); }
+/* Tightens up the old default rounded utility styles across the repository files */
+.rounded-2xl,
+.rounded-\[2rem\],
+.rounded-\[1\.5rem\],
+.rounded-full {
+  border-radius: 0px !important;
 }
 
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(40px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.7s ease-out forwards;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-slideInLeft {
-  animation: slideInLeft 0.7s ease-out forwards;
-}
-
-.animate-slideInRight {
-  animation: slideInRight 0.7s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Stagger delays */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
-
-/* Product card hover */
-.product-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-}
-
-/* Category tab */
-.category-tab {
-  transition: all 0.3s ease;
-  position: relative;
-}
-.category-tab.active {
-  color: var(--jaks-blue);
-}
-.category-tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--jaks-orange);
-  border-radius: 2px;
+/* Re-targets buttons back to solid high-impact modern blocks */
+button {
+  border-radius: 0px !important;
 }

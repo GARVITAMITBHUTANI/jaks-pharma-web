@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import logoSvg from '../assets/LOGO JAKS (CDR) (1).svg';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -21,55 +22,47 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { label: 'About', href: 'about' },
-    { label: 'Products', href: 'products' },
-    { label: 'Therapy Areas', href: 'therapy' },
-    { label: 'Education Hub', href: 'education' },
-    { label: 'Contact', href: 'contact' }
+    { label: 'About', href: 'about', isPage: false },
+    { label: 'Products', href: 'products', isPage: false },
+    { label: 'Therapy Areas', href: 'therapy', isPage: false },
+    { label: 'Education Hub', href: '/articles', isPage: true },
+    { label: 'Contact', href: 'contact', isPage: false }
   ];
 
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (link) => {
     setIsMobileMenuOpen(false);
     
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (link.isPage) {
+      navigate(link.href);
+      return;
     }
+
+    const sectionId = link.href;
+    // Always navigate to update the URL so browser history works perfectly
+    navigate('/#' + sectionId);
   };
 
   const scrollToTop = () => {
     if (location.pathname !== '/') {
       navigate('/');
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <button onClick={scrollToTop} className="flex items-center gap-2 group bg-transparent border-none cursor-pointer focus:outline-none">
-            <span className="text-2xl lg:text-3xl font-extrabold tracking-tight">
-              <span className="text-[#00529B]">JAKS</span><span className="text-[#F37021]">.</span>
-            </span>
-            <span className="text-xs font-semibold text-[#6B7280] uppercase tracking-[0.15em] hidden sm:block">Pharma</span>
+          <button onClick={scrollToTop} className="flex items-center gap-2 group bg-transparent border-none cursor-pointer focus:outline-none h-full">
+            <img src={logoSvg} alt="Jaks Pharma Logo" className="h-full w-auto object-contain scale-[2] lg:scale-[2.8] origin-left transition-transform duration-300" />
           </button>
-          
+
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <button 
                 key={link.label}
-                onClick={() => handleNavClick(link.href)}
+                onClick={() => handleNavClick(link)}
                 className="text-sm font-medium text-gray-700 hover:text-[#00529B] transition-colors duration-300 relative group bg-transparent border-none cursor-pointer"
               >
                 {link.label}
@@ -77,11 +70,11 @@ const Navbar = () => {
               </button>
             ))}
           </nav>
-          
-          <button onClick={() => handleNavClick('contact')} className="hidden lg:inline-flex bg-[#F37021] text-white hover:bg-[#D9611B] hover:-translate-y-0.5 transition-all duration-300 rounded-full px-6 py-2.5 text-sm font-semibold shadow-md hover:shadow-lg border-none cursor-pointer">
+
+          <button onClick={() => handleNavClick({ href: 'contact', isPage: false })} className="hidden lg:inline-flex bg-[#F37021] text-white hover:bg-[#D9611B] hover:-translate-y-0.5 transition-all duration-300 rounded-full px-6 py-2.5 text-sm font-semibold shadow-md hover:shadow-lg border-none cursor-pointer">
             Contact Us
           </button>
-          
+
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden p-2 text-gray-700 bg-transparent border-none cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu" aria-hidden="true">
               <path d="M4 12h16"></path>
@@ -98,13 +91,13 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <button 
               key={link.label}
-              onClick={() => handleNavClick(link.href)}
-              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#00529B] hover:bg-[#EAF2F8] rounded-lg transition-colors border-none bg-transparent cursor-pointer"
+              onClick={() => handleNavClick(link)}
+              className="block w-full text-left px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#00529B] hover:bg-[#F9FAFB] rounded-lg transition-colors border-none bg-transparent cursor-pointer"
             >
               {link.label}
             </button>
           ))}
-          <button onClick={() => handleNavClick('contact')} className="w-full bg-[#F37021] border-none cursor-pointer text-white rounded-full py-3 text-sm font-semibold mt-2">
+          <button onClick={() => handleNavClick({ href: 'contact', isPage: false })} className="w-full bg-[#F37021] border-none cursor-pointer text-white rounded-full py-3 text-sm font-semibold mt-2">
             Contact Us
           </button>
         </div>
