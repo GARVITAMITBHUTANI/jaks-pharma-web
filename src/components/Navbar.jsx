@@ -22,11 +22,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
+    { label: 'Home', href: 'top', isPage: false },
     { label: 'About', href: 'about', isPage: false },
     { label: 'Products', href: 'products', isPage: false },
     { label: 'Therapy Areas', href: 'therapy', isPage: false },
-    { label: 'Education Hub', href: '/articles', isPage: true },
-    { label: 'Contact', href: 'contact', isPage: false }
+    { label: 'Education Hub', href: '/articles', isPage: true }
   ];
 
   const handleNavClick = (link) => {

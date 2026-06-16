@@ -25,6 +25,7 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-bold uppercase tracking-wider text-[#00529B] mb-5">Quick Links</h4>
             <ul className="space-y-3">
+              <li><Link to="/#top" className="text-sm text-gray-600 hover:text-[#F37021] transition-colors duration-300">Home</Link></li>
               <li><Link to="/#about" className="text-sm text-gray-600 hover:text-[#F37021] transition-colors duration-300">About Us</Link></li>
               <li><Link to="/#products" className="text-sm text-gray-600 hover:text-[#F37021] transition-colors duration-300">Products</Link></li>
               <li><Link to="/#therapy" className="text-sm text-gray-600 hover:text-[#F37021] transition-colors duration-300">Therapy Areas</Link></li>
@@ -44,10 +45,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">© {new Date().getFullYear()} JAKS Pharma Private Limited. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span className="text-xs text-gray-500 hover:text-[#00529B] transition-colors cursor-pointer">Privacy Policy</span>
-            <span className="text-xs text-gray-500 hover:text-[#00529B] transition-colors cursor-pointer">Terms of Use</span>
-          </div>
+
         </div>
       </div>
     </footer>

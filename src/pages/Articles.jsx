@@ -4,7 +4,7 @@ import { articles } from '../data/articles';
 
 const Articles = () => {
   const [activeTab, setActiveTab] = useState('All');
-  const tabs = ['All', 'Blog', 'News & Updates', 'Resources', 'Videos'];
+  const tabs = ['All', 'Blog', 'News & Updates', 'Resources'];
 
   const filteredArticles = activeTab === 'All'
     ? articles

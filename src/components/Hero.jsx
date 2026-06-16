@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import relumiaImg from '../assets/Relumia.png';
 import flutijaksLotionImg from '../assets/Flutijaks.png';
 import clinderaGelImg from '../assets/Clindera.png';
+import logoSvg from '../assets/LOGO JAKS (CDR) (1).svg';
 
 const slides = [
   {
@@ -29,12 +30,13 @@ const slides = [
     titleLine2: 'Cellular ',
     titleHighlight2: 'Antioxidants.',
     description: 'Scientifically formulated skin brightening nutraceutical utilizing premium Opitac® L-Glutathione from Japan to combat hyperpigmentation and oxidative stress.',
-    image: relumiaImg,
+    image: logoSvg,
     stats1: '500mg',
     stats1Label: 'Glutathione',
     stats2: 'Japan',
     stats2Label: 'Opitac® Res',
-    cropClass: 'object-center'
+    cropClass: 'object-contain',
+    blend: true
   },
   {
     id: 3,
@@ -44,12 +46,13 @@ const slides = [
     titleLine2: 'Rapid Skin ',
     titleHighlight2: 'Relief.',
     description: 'Proud to introduce market-disrupting breakthrough formulations like India\'s very first Fluticasone Propionate lotion formulation.',
-    image: flutijaksLotionImg,
+    image: logoSvg,
     stats1: '1st',
     stats1Label: 'In India',
     stats2: '20ml',
     stats2Label: 'Lotion Pack',
-    cropClass: 'object-center'
+    cropClass: 'object-contain',
+    blend: true
   },
   {
     id: 4,
@@ -59,12 +62,13 @@ const slides = [
     titleLine2: 'Clearer Skin ',
     titleHighlight2: 'Texture.',
     description: 'Precision-engineered combination treatment merging Clindamycin and Nicotinamide to clear active acne, regulate sebum, and repair vulnerable barriers.',
-    image: clinderaGelImg,
+    image: logoSvg,
     stats1: 'Dual',
     stats1Label: 'Actives',
     stats2: '20g',
     stats2Label: 'Gel Tube',
-    cropClass: 'object-top'
+    cropClass: 'object-contain',
+    blend: true
   },
   {
     id: 5,
@@ -74,12 +78,13 @@ const slides = [
     titleLine2: 'Doctor Trusted ',
     titleHighlight2: 'Solutions.',
     description: 'Driven by a high-performance leadership philosophy, we turn medical insights into active clinical solutions faster than industry standards.',
-    image: '',
+    image: logoSvg,
     stats1: 'Active',
     stats1Label: 'Solutions',
     stats2: 'Doctor',
     stats2Label: 'Trusted',
-    cropClass: 'object-top'
+    cropClass: 'object-contain',
+    blend: true
   }
 ];
 
@@ -192,12 +197,12 @@ const Hero = () => {
         </div>
 
         {/* RIGHT DISPLAY PANEL */}
-        <div className="w-full lg:w-[50%] relative aspect-[16/10] lg:aspect-auto min-h-[240px] sm:min-h-[360px] lg:min-h-full overflow-hidden order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-gray-200/20 bg-black/[0.02]">
+        <div className="w-full lg:w-[50%] relative aspect-[16/10] lg:aspect-auto min-h-[240px] sm:min-h-[360px] lg:min-h-full overflow-hidden order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-gray-200/20">
 
           {slide.image ? (
             <img
               alt="Hero Slide Showcase"
-              className={`w-full h-full object-cover ${slide.cropClass} absolute inset-0 transition-all duration-700`}
+              className={`w-full h-full ${slide.blend ? 'object-cover p-0' : 'object-cover'} ${slide.cropClass} absolute inset-0 transition-all duration-700`}
               src={slide.image}
             />
           ) : (
