@@ -1,4 +1,5 @@
 import React from 'react';
+import relumiaSvg from '../assets/relumia.svg';
 
 const therapies = [
   { id: 1, name: 'Acne Care', icon: '✨' },
@@ -27,9 +28,9 @@ const TherapyAreas = () => {
         
         <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
           <div className="lg:col-span-5 mb-12 lg:mb-0 reveal-left">
-            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=600&auto=format&fit=crop" alt="Therapy Areas" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#00529B]/90 via-[#00529B]/40 to-transparent"></div>
+            <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-[#faf2f2]">
+              <img src={relumiaSvg} alt="Therapy Areas" className="absolute inset-0 w-full h-full object-contain p-12 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#00529B]/95 via-[#00529B]/20 to-transparent"></div>
               
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h3 className="text-2xl font-bold text-white mb-3">Targeted Solutions</h3>

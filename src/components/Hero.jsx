@@ -3,8 +3,11 @@ import React, { useState, useEffect } from 'react';
 // Relative imports targeting your local assets folder cleanly
 import relumiaImg from '../assets/Relumia.png';
 import flutijaksLotionImg from '../assets/Flutijaks.png';
-import clinderaGelImg from '../assets/Clindera.png';
 import logoSvg from '../assets/LOGO JAKS (CDR) (1).svg';
+import relumiaSvg from '../assets/relumia.svg';
+import emoluxOcSvg from '../assets/emolux oc.svg';
+import nigrinilSvg from '../assets/Nigrinil.svg';
+import clinderaNSvg from '../assets/clindera n.svg';
 
 const slides = [
   {
@@ -30,7 +33,7 @@ const slides = [
     titleLine2: 'Cellular ',
     titleHighlight2: 'Antioxidants.',
     description: 'Scientifically formulated skin brightening nutraceutical utilizing premium Opitac® L-Glutathione from Japan to combat hyperpigmentation and oxidative stress.',
-    image: logoSvg,
+    image: relumiaSvg,
     stats1: '500mg',
     stats1Label: 'Glutathione',
     stats2: 'Japan',
@@ -40,49 +43,49 @@ const slides = [
   },
   {
     id: 3,
-    tagline: 'Pioneering Firsts',
-    titleLine1: 'Visible Results. ',
-    titleHighlight1: 'Targeted',
-    titleLine2: 'Rapid Skin ',
-    titleHighlight2: 'Relief.',
-    description: 'Proud to introduce market-disrupting breakthrough formulations like India\'s very first Fluticasone Propionate lotion formulation.',
-    image: logoSvg,
-    stats1: '1st',
-    stats1Label: 'In India',
-    stats2: '20ml',
-    stats2Label: 'Lotion Pack',
+    tagline: 'Advanced Oil Control Hydration',
+    titleLine1: 'Balanced Hydration. ',
+    titleHighlight1: 'Zero Shine.',
+    titleLine2: 'Regulates ',
+    titleHighlight2: 'Sebum.',
+    description: 'A scientifically formulated oil-control emollient designed specifically for oily and acne-prone skin, providing deep hydration without clogging pores.',
+    image: emoluxOcSvg,
+    stats1: 'Oil-Free',
+    stats1Label: 'Formula',
+    stats2: 'Non',
+    stats2Label: 'Comedogenic',
     cropClass: 'object-contain',
     blend: true
   },
   {
     id: 4,
+    tagline: 'Targeted Pigmentation Therapy',
+    titleLine1: 'Advanced Care. ',
+    titleHighlight1: 'Even Tone.',
+    titleLine2: 'Smooths ',
+    titleHighlight2: 'Texture.',
+    description: 'Precision-engineered formulation targeted at treating Acanthosis Nigricans by gently exfoliating and visibly reducing thick, dark, and velvety skin patches.',
+    image: nigrinilSvg,
+    stats1: 'Exfoliates',
+    stats1Label: 'Thick Skin',
+    stats2: 'Evens',
+    stats2Label: 'Skin Tone',
+    cropClass: 'object-contain',
+    blend: true
+  },
+  {
+    id: 5,
     tagline: 'Dermatology, Advanced',
     titleLine1: 'Next Gen Therapy. ',
     titleHighlight1: 'Acne Repair.',
     titleLine2: 'Clearer Skin ',
     titleHighlight2: 'Texture.',
     description: 'Precision-engineered combination treatment merging Clindamycin and Nicotinamide to clear active acne, regulate sebum, and repair vulnerable barriers.',
-    image: logoSvg,
+    image: clinderaNSvg,
     stats1: 'Dual',
     stats1Label: 'Actives',
     stats2: '20g',
     stats2Label: 'Gel Tube',
-    cropClass: 'object-contain',
-    blend: true
-  },
-  {
-    id: 5,
-    tagline: 'The 90-Day Execution Standard',
-    titleLine1: 'Science Meets ',
-    titleHighlight1: 'Sophistication.',
-    titleLine2: 'Doctor Trusted ',
-    titleHighlight2: 'Solutions.',
-    description: 'Driven by a high-performance leadership philosophy, we turn medical insights into active clinical solutions faster than industry standards.',
-    image: logoSvg,
-    stats1: 'Active',
-    stats1Label: 'Solutions',
-    stats2: 'Doctor',
-    stats2Label: 'Trusted',
     cropClass: 'object-contain',
     blend: true
   }
@@ -109,7 +112,7 @@ const Hero = () => {
   const slide = slides[currentSlide];
 
   return (
-    <section id="top" className="relative min-h-screen lg:h-screen w-full flex flex-col bg-[#faf2f2] text-[#111827] overflow-hidden pt-16 group/section">
+    <section id="top" className="relative min-h-[100dvh] w-full flex flex-col bg-[#faf2f2] text-[#111827] overflow-hidden pt-16 lg:pt-20 group/section">
 
       {/* INNER CONTENT GRID WRAPPER */}
       <div className="flex-grow w-full flex flex-col lg:flex-row items-center lg:items-stretch justify-between">
@@ -137,7 +140,7 @@ const Hero = () => {
         </button>
 
         {/* LEFT CONTENT PANEL */}
-        <div className="w-full lg:w-[50%] flex flex-col justify-center items-start px-6 sm:px-12 lg:px-20 py-8 sm:py-12 lg:py-0 space-y-4 sm:space-y-5 relative z-20 order-2 lg:order-1">
+        <div className="w-full lg:w-[50%] flex flex-col justify-center items-start px-6 sm:px-12 lg:px-20 py-8 lg:py-4 space-y-3 sm:space-y-4 lg:space-y-3 relative z-20 order-2 lg:order-1">
 
           <div className="h-[24px] overflow-hidden flex items-center">
             <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-bold text-[#F37021]">
@@ -150,8 +153,8 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="w-full min-h-[85px] sm:min-h-[110px] xl:min-h-[145px] flex items-center overflow-hidden">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-[1.1] font-extrabold text-[#111827] whitespace-pre-line">
+          <div className="w-full min-h-[75px] sm:min-h-[90px] xl:min-h-[125px] flex items-center overflow-hidden">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.5rem] tracking-tight leading-[1.1] font-extrabold text-[#111827] whitespace-pre-line">
               {slide.titleLine1}<span style={{ display: 'contents' }}> </span><span className="text-[#00529B]">{slide.titleHighlight1}</span><br />
               {slide.titleLine2}<span style={{ display: 'contents' }}> </span><span className="relative inline-block">
                 <span className="text-[#F37021]">{slide.titleHighlight2}</span>
@@ -202,7 +205,7 @@ const Hero = () => {
           {slide.image ? (
             <img
               alt="Hero Slide Showcase"
-              className={`w-full h-full ${slide.blend ? 'object-cover p-0' : 'object-cover'} ${slide.cropClass} absolute inset-0 transition-all duration-700`}
+              className={`w-full h-full ${slide.blend ? 'object-contain mix-blend-multiply p-4 sm:p-8 lg:p-12' : 'object-contain p-4 sm:p-8 lg:p-12'} ${slide.cropClass} absolute inset-0 transition-all duration-700`}
               src={slide.image}
             />
           ) : (

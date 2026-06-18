@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import ArticleDetail from './pages/ArticleDetail';
 import Articles from './pages/Articles';
+import WhatsAppButton from './components/WhatsAppButton';
 function App() {
   return (
     <Router>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/article/:id" element={<ArticleDetail />} />
           <Route path="/articles" element={<Articles />} />
         </Routes>
+        <WhatsAppButton />
         <Footer />
       </div>
     </Router>
