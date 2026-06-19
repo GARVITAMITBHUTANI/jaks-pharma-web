@@ -1,3 +1,12 @@
+import facioxUvImg from '../assets/Faciox UV.jpeg';
+import eglanceImg from '../assets/Eglance.jpeg';
+import facioxVitCImg from '../assets/Faciox C.jpeg';
+import facioxFwImg from '../assets/Faciox Face wash.jpeg';
+import facioxHaImg from '../assets/Faciox HA.jpeg';
+import facioxSbImg from '../assets/Faciox SB.jpeg';
+import relumiaImg from '../assets/Relumia.jpg';
+import kerajaksImg from '../assets/kerajaks hair.png';
+
 export const products = [
   {
     id: 1,
@@ -10,8 +19,7 @@ export const products = [
     description: 'Kerajaks is a formulation that is serum-based and enhanced by the potency of natural components. Its irritation-free solution, which has been rigorously tested on both men and women, encourages quick hair growth while nourishing the scalp. It strengthens hair from root to tip and tackles the primary causes of hair loss.',
     indications: 'Telogen Effluvium, Androgenetic alopecia, Re-densification of Hair on Scalp, Male pattern hair loss',
     price: 0.00,
-    stock_quantity: 0,
-    image_url: '',
+    image_url: kerajaksImg,
     title_line1: 'Your Hair, ',
     title_highlight1: 'Fortified',
     title_line2: 'Root ',
@@ -33,7 +41,7 @@ export const products = [
     indications: 'Anti-UV+ IR+ Blue Light, Anti-Pollution, Broad Spectrum Protection, Sunburn, SunTan, Premature Ageing',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: facioxUvImg,
     title_line1: 'Science ',
     title_highlight1: 'Backed',
     title_line2: 'Skin ',
@@ -55,7 +63,7 @@ export const products = [
     indications: 'Uneven Skin Tone, Melasma, Acne, Hyperpigmentation, Skin Radiance, Oily skin',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: facioxFwImg,
     title_line1: 'Deeply ',
     title_highlight1: 'Cleansed',
     title_line2: 'Flawlessly ',
@@ -121,7 +129,7 @@ export const products = [
     indications: 'Hyperpigmentation, uneven skin tone, Melasma, Skin Radiance, Photoageing, Post-inflammatory hyperpigmentation (PIH)',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: facioxSbImg,
     title_line1: 'Luminous ',
     title_highlight1: 'Radiance',
     title_line2: 'Flawless ',
@@ -143,7 +151,7 @@ export const products = [
     indications: 'Wrinkles, Fine lines, Premature Ageing, Dry skin',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: facioxHaImg,
     title_line1: 'Deeply ',
     title_highlight1: 'Plumped',
     title_line2: 'Intensely ',
@@ -165,7 +173,7 @@ export const products = [
     indications: 'Dark circles, Crow’s feet and puffiness',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: eglanceImg,
     title_line1: 'Tired Eyes, ',
     title_highlight1: 'Revitalized',
     title_line2: 'Dark Circles, ',
@@ -187,7 +195,7 @@ export const products = [
     indications: 'Wrinkles, Hyperpigmentation, Premature Ageing, Crow\'s Feet',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: facioxVitCImg,
     title_line1: 'Pure ',
     title_highlight1: 'Antioxidant',
     title_line2: 'Radiant ',
@@ -385,7 +393,7 @@ export const products = [
     indications: 'Dull Skin & Uneven Skin Tone, Hyperpigmentation, Melasma, Oxidative Stress-related Skin Damage',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: relumiaImg,
     title_line1: 'Radiant ',
     title_highlight1: 'Glow',
     title_line2: 'Pigmentation ',
