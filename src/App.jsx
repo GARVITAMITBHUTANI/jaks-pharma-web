@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import ProductDetail from './pages/ProductDetail';
 import ArticleDetail from './pages/ArticleDetail';
 import Articles from './pages/Articles';
+import FAQ from './pages/FAQ';
+import ExpertAdvice from './pages/ExpertAdvice';
 import WhatsAppButton from './components/WhatsAppButton';
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/article/:id" element={<ArticleDetail />} />
           <Route path="/articles" element={<Articles />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/expert-advice" element={<ExpertAdvice />} />
         </Routes>
         <WhatsAppButton />
         <Footer />

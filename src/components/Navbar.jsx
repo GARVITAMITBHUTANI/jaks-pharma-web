@@ -26,7 +26,9 @@ const Navbar = () => {
     { label: 'About', href: 'about', isPage: false },
     { label: 'Products', href: 'products', isPage: false },
     { label: 'Therapy Areas', href: 'therapy', isPage: false },
-    { label: 'Education Hub', href: '/articles', isPage: true }
+    { label: 'Education Hub', href: '/articles', isPage: true },
+    { label: 'Expert Advice', href: '/expert-advice', isPage: true },
+    { label: 'FAQ', href: '/faq', isPage: true }
   ];
 
   const handleNavClick = (link) => {

@@ -8,6 +8,8 @@ import relumiaSvg from '../assets/relumia.svg';
 import emoluxOcSvg from '../assets/emolux oc.svg';
 import nigrinilSvg from '../assets/Nigrinil.svg';
 import clinderaNSvg from '../assets/clindera n.svg';
+import facioxUvSvg from '../assets/Faciox uv.svg';
+import facioxSbSvg from '../assets/faciox sb.svg';
 
 const slides = [
   {
@@ -59,33 +61,33 @@ const slides = [
   },
   {
     id: 4,
-    tagline: 'Targeted Pigmentation Therapy',
-    titleLine1: 'Advanced Care. ',
-    titleHighlight1: 'Even Tone.',
-    titleLine2: 'Smooths ',
-    titleHighlight2: 'Texture.',
-    description: 'Precision-engineered formulation targeted at treating Acanthosis Nigricans by gently exfoliating and visibly reducing thick, dark, and velvety skin patches.',
-    image: nigrinilSvg,
-    stats1: 'Exfoliates',
-    stats1Label: 'Thick Skin',
-    stats2: 'Evens',
-    stats2Label: 'Skin Tone',
+    tagline: 'Clinical Purity Protocols',
+    titleLine1: 'Science ',
+    titleHighlight1: 'Backed.',
+    titleLine2: 'Skin ',
+    titleHighlight2: 'Approved.',
+    description: 'Faciox UV is a smart sunscreen that provides ultimate defence against harmful UV rays. A silicone-based water-resistant formula with SPF 50 and PA+++.',
+    image: facioxUvSvg,
+    stats1: 'SPF 50',
+    stats1Label: 'PA+++',
+    stats2: '0%',
+    stats2Label: 'Fillers Used',
     cropClass: 'object-contain',
     blend: true
   },
   {
     id: 5,
-    tagline: 'Dermatology, Advanced',
-    titleLine1: 'Next Gen Therapy. ',
-    titleHighlight1: 'Acne Repair.',
-    titleLine2: 'Clearer Skin ',
-    titleHighlight2: 'Texture.',
-    description: 'Precision-engineered combination treatment merging Clindamycin and Nicotinamide to clear active acne, regulate sebum, and repair vulnerable barriers.',
-    image: clinderaNSvg,
-    stats1: 'Dual',
-    stats1Label: 'Actives',
-    stats2: '20g',
-    stats2Label: 'Gel Tube',
+    tagline: 'Advanced Pigmentation Science',
+    titleLine1: 'Luminous ',
+    titleHighlight1: 'Radiance.',
+    titleLine2: 'Flawless ',
+    titleHighlight2: 'Tone.',
+    description: 'FACIOX Skin Brightening Serum unlocks a luminous, even-toned complexion. This advanced serum transforms skin vitality and reveals natural radiance.',
+    image: facioxSbSvg,
+    stats1: '3x',
+    stats1Label: 'Active Act',
+    stats2: '0',
+    stats2Label: 'Dark Spots',
     cropClass: 'object-contain',
     blend: true
   }
