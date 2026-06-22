@@ -35,13 +35,51 @@ const ProductDetail = () => {
     );
   }
 
+  const getProductColor = (code) => {
+    const colors = {
+      'KERA01': '#2b2b29',
+      'FACIOXUV': '#F37021',
+      'FACIOXFW': '#38BDF8',
+      'FACIOXSB': '#FDBA74',
+      'FACIOXHA': '#60A5FA',
+      'FACIOXVITC': '#FCD34D',
+      'EGLANCEEYE': '#34D399',
+      'RELUMIA': '#A78BFA',
+      'CLINDERAN': '#F472B6',
+      'NIGRINIL': '#FB7185',
+      'FLUTIJAKSCREAM': '#60A5FA',
+      'FLUTIJAKSLOTION': '#60A5FA',
+      'KERAJAKSM': '#2b2b29',
+      'EMOLUXOC': '#4ADE80',
+    };
+    return colors[code] || '#F9FAFB';
+  };
+
+  const bgColor = getProductColor(product.product_code);
+
   return (
-    <main className="py-24 lg:py-32 bg-[#F9FAFB] min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main 
+      className="py-24 lg:py-32 min-h-screen relative overflow-hidden transition-colors duration-700"
+      style={{ backgroundColor: bgColor }}
+    >
+      {/* Dynamic Ambient Background */}
+      {product.image_url && (
+        <div 
+          className="absolute inset-0 z-0 opacity-40 blur-[80px] scale-150 transform-gpu pointer-events-none mix-blend-overlay" 
+          style={{ 
+            backgroundImage: `url(${product.image_url})`, 
+            backgroundSize: 'contain', 
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }} 
+        />
+      )}
+      <div className="absolute inset-0 z-0 bg-black/5 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
 
-
-        <div className="bg-white rounded-[2rem] p-8 lg:p-12 shadow-xl border border-gray-100 flex flex-col lg:flex-row gap-12 items-center">
+        <div className="bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 lg:p-12 shadow-xl border border-white/50 flex flex-col lg:flex-row gap-12 items-center">
           
           <div className="w-full lg:w-1/2 flex flex-col gap-4">
             <div className="aspect-square bg-white border border-gray-100 rounded-[1.5rem] flex items-center justify-center p-8 relative overflow-hidden group">

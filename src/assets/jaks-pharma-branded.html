@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaks Pharma Private Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0A6790;        /* AKS wordmark */
+    --teal-deep:#074A68;
+    --sky:#14A0DB;         /* swoosh */
+    --red:#FB0303;         /* accent dot */
+    --grey:#666666;        /* PHARMA wordmark */
+    --slate:#5C6B7A;
+    --hairline:#E3EAEE;
+    --paper:#F5FAFC;
+    --white:#FFFFFF;
+    --display: 'Poppins', sans-serif;
+    --sans: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--teal-deep);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-0.01em;}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);display:flex;align-items:center;gap:10px;}
+  .eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block;}
+  .btn{font-weight:600;font-size:14px;padding:13px 28px;border-radius:6px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:all .25s ease;border:1px solid transparent;}
+  .btn-primary{background:var(--teal);color:var(--white);}
+  .btn-primary:hover{background:var(--teal-deep);}
+  .btn-ghost{border:1.5px solid var(--hairline);color:var(--teal);}
+  .btn-ghost:hover{border-color:var(--teal);background:var(--paper);}
+  .btn-ghost-light{border:1.5px solid rgba(255,255,255,.55);color:var(--white);}
+  .btn-ghost-light:hover{border-color:var(--white);background:rgba(255,255,255,.12);}
+  .btn:focus-visible{outline:2px solid var(--sky);outline-offset:2px;}
+
+  /* ===== HEADER ===== */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1180px;margin:0 auto;}
+  .logo-img{height:38px;width:auto;}
+  .nav-links{display:flex;gap:36px;font-size:14px;font-weight:500;}
+  .nav-links a{opacity:.78;transition:opacity .2s;color:var(--teal-deep);}
+  .nav-links a:hover{opacity:1;color:var(--sky);}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg, var(--paper) 0%, #EAF6FB 100%);padding:80px 0 0;}
+  .hero-blob{position:absolute;top:-120px;right:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 35% 35%, rgba(20,160,219,0.18), rgba(20,160,219,0) 70%);}
+  .hero-dot{position:absolute;bottom:60px;left:6%;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle at 35% 30%, rgba(251,3,3,0.16), rgba(251,3,3,0) 70%);}
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;max-width:1180px;margin:0 auto;padding:0 32px;}
+  .hero-copy h1{font-size:46px;line-height:1.15;margin:20px 0 22px;max-width:500px;color:var(--teal-deep);}
+  .hero-copy h1 .accent{color:var(--sky);}
+  .hero-copy p{color:var(--slate);font-size:16.5px;max-width:440px;margin-bottom:34px;}
+  .hero-ctas{display:flex;gap:14px;margin-bottom:60px;}
+
+  .coa-card{background:var(--white);border-radius:10px;box-shadow:0 30px 70px -25px rgba(10,103,144,0.35);overflow:hidden;border:1px solid var(--hairline);}
+  .coa-head{background:var(--teal);color:var(--white);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;}
+  .coa-head .t1{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;opacity:.7;text-transform:uppercase;}
+  .coa-head .t2{font-family:var(--display);font-size:16px;margin-top:3px;font-weight:600;}
+  .coa-batch{font-family:var(--mono);font-size:11px;color:#9FE0FA;text-align:right;}
+  .coa-body{padding:22px;}
+  .coa-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--hairline);font-size:13.5px;}
+  .coa-row:last-child{border-bottom:none;}
+  .coa-row .label{color:var(--slate);}
+  .coa-row .value{font-family:var(--mono);font-weight:500;display:flex;align-items:center;gap:8px;color:var(--teal-deep);}
+  .pass{font-size:10px;font-family:var(--mono);letter-spacing:.06em;background:#EAF3EC;color:#2E7D4F;padding:3px 8px;border-radius:20px;}
+
+  .strip{border-top:1px solid var(--hairline);background:var(--white);}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .strip-item{padding:26px 30px;border-right:1px solid var(--hairline);}
+  .strip-item:last-child{border-right:none;}
+  .strip-num{font-family:var(--display);font-size:26px;color:var(--teal-deep);font-weight:600;}
+  .strip-num span{color:var(--red);}
+  .strip-label{font-size:12.5px;color:var(--slate);margin-top:4px;}
+
+  /* ===== SECTION GENERIC ===== */
+  section{padding:100px 0;}
+  .section-head{max-width:600px;margin-bottom:60px;}
+  .section-head h2{font-size:34px;line-height:1.2;margin-top:14px;color:var(--teal-deep);}
+  .section-head p{color:var(--slate);font-size:16px;margin-top:14px;max-width:500px;}
+
+  /* ===== VALUE CARDS ===== */
+  .values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:10px;overflow:hidden;}
+  .value-card{background:var(--white);padding:38px;}
+  .value-card .vi{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg, var(--sky), var(--teal));display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-family:var(--display);color:var(--white);font-size:16px;font-weight:700;}
+  .value-card h3{font-size:19px;margin-bottom:10px;color:var(--teal-deep);}
+  .value-card p{color:var(--slate);font-size:14.5px;line-height:1.7;}
+
+  /* ===== STORY ROWS ===== */
+  .story-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:50px 0;border-top:1px solid var(--hairline);}
+  .story-row:first-of-type{border-top:none;}
+  .story-row.reverse .story-img{order:2;}
+  .story-row.reverse .story-text{order:1;}
+  .story-img{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;}
+  .story-img img{width:100%;height:100%;object-fit:cover;}
+  .story-tag{position:absolute;top:16px;left:16px;background:var(--white);font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:20px;color:var(--teal);}
+  .story-text .id{font-family:var(--mono);font-size:12px;color:var(--red);margin-bottom:10px;display:block;}
+  .story-text h3{font-size:24px;margin-bottom:14px;color:var(--teal-deep);}
+  .story-text p{color:var(--slate);font-size:15.5px;line-height:1.8;}
+  .story-text p.quote{font-family:var(--display);font-weight:500;font-size:18px;color:var(--teal);margin-top:18px;line-height:1.55;}
+
+  /* ===== STATEMENT BAND ===== */
+  .statement-band{position:relative;background:linear-gradient(125deg, var(--teal-deep), var(--teal));padding:88px 0;text-align:center;overflow:hidden;}
+  .statement-band .ring{position:absolute;width:380px;height:380px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);top:-120px;left:-100px;}
+  .statement-band .ring2{position:absolute;width:260px;height:260px;border-radius:50%;border:1px solid rgba(255,255,255,0.1);bottom:-100px;right:-60px;}
+  .statement-band .wrap{position:relative;z-index:2;}
+  .statement-band .mark{width:14px;height:14px;border-radius:50%;background:var(--red);display:inline-block;margin-bottom:18px;}
+  .statement-band h2{color:var(--white);font-size:30px;max-width:680px;margin:0 auto 16px;line-height:1.45;font-weight:500;}
+  .statement-band .by{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#9FE0FA;}
+
+  /* ===== QUALITY LEDGER ===== */
+  .quality-section{background:var(--paper);}
+  .ledger{border-top:1.5px solid var(--teal);}
+  .ledger-row{display:grid;grid-template-columns:80px 1fr 1.3fr;gap:28px;padding:32px 0;border-bottom:1px solid var(--hairline);align-items:start;}
+  .ledger-row:hover{background:rgba(20,160,219,0.04);}
+  .ledger-id{font-family:var(--mono);font-size:12px;color:var(--red);padding-top:4px;}
+  .ledger-title{font-family:var(--display);font-size:19px;font-weight:600;color:var(--teal-deep);}
+  .ledger-quote{color:var(--slate);font-size:14.5px;line-height:1.75;border-left:2px solid var(--sky);padding-left:18px;}
+
+  .callout{background:var(--white);border:1px solid var(--hairline);border-left:3px solid var(--red);padding:36px 40px;margin-top:48px;border-radius:0 10px 10px 0;}
+  .callout p{font-family:var(--display);font-weight:500;font-size:19px;line-height:1.55;color:var(--teal-deep);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--teal-deep);color:rgba(255,255,255,0.75);padding:60px 0 32px;}
+  .footer-top{display:flex;align-items:center;gap:14px;margin-bottom:36px;}
+  .footer-logo-img{height:32px;filter:brightness(0) invert(1);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+  .footer-grid h4{color:var(--white);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:18px;font-family:var(--mono);}
+  .footer-grid a{display:block;font-size:14px;margin-bottom:11px;opacity:.82;}
+  .footer-grid a:hover{opacity:1;color:#9FE0FA;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.12);padding-top:24px;display:flex;justify-content:space-between;font-size:12.5px;opacity:.6;}
+
+  @media (max-width: 880px){
+    .nav-links{display:none;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-copy h1{font-size:32px;}
+    .strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .values-grid{grid-template-columns:1fr;}
+    .story-row{grid-template-columns:1fr;gap:24px;}
+    .story-row.reverse .story-img{order:1;}
+    .story-row.reverse .story-text{order:2;}
+    .ledger-row{grid-template-columns:1fr;gap:12px;}
+    .ledger-quote{border-left:none;padding-left:0;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <img class="logo-img" src="assets/jaks-logo.png" alt="Jaks Pharma logo">
+    <div class="nav-links">
+      <a href="#science">Science</a>
+      <a href="#values">Our values</a>
+      <a href="#quality">Quality</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-ghost">Contact us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-dot"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow">Jaks Pharma Private Limited</div>
+      <h1>Science you can trust. <span class="accent">Care</span> you can feel.</h1>
+      <p>Every molecule we develop is backed by rigorous research and an unwavering commitment to scientific integrity — because behind every prescription is a person.</p>
+      <div class="hero-ctas">
+        <a href="#science" class="btn btn-primary">Explore our research</a>
+        <a href="#values" class="btn btn-ghost">Our values</a>
+      </div>
+    </div>
+    <div class="coa-card">
+      <div class="coa-head">
+        <div>
+          <div class="t1">Certificate of Standards</div>
+          <div class="t2">Jaks Pharma — Quality Charter</div>
+        </div>
+        <div class="coa-batch">REF / 2026-JP</div>
+      </div>
+      <div class="coa-body">
+        <div class="coa-row"><span class="label">Scientific rigor</span><span class="value">Evidence-based <span class="pass">PASS</span></span></div>
+        <div class="coa-row"><span class="label">Manufacturing quality</span><span class="value">GMP standard <span class="pass">PASS</span></span></div>
+        <div class="coa-row"><span class="label">Ethical conduct</span><span class="value">Zero deviation <span class="pass">PASS</span></span></div>
+        <div class="coa-row"><span class="label">Patient outcome focus</span><span class="value">Primary metric <span class="pass">PASS</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="strip-item"><div class="strip-num">100<span>%</span></div><div class="strip-label">Evidence-led formulation</div></div>
+      <div class="strip-item"><div class="strip-num">0<span> deviations</span></div><div class="strip-label">tolerated in ethical conduct</div></div>
+      <div class="strip-item"><div class="strip-num">1<span>st</span></div><div class="strip-label">Question: does this help the patient?</div></div>
+      <div class="strip-item"><div class="strip-num">A<span>ccess</span></div><div class="strip-label">Quality healthcare, not a privilege</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="values">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What we stand for</div>
+      <h2>Four principles, lived daily.</h2>
+      <p>Not slogans on a wall — the standard every formulation, decision, and relationship is measured against.</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="vi">Sc</div>
+        <h3>Science-oriented</h3>
+        <p>From bench to bedside, our formulations are grounded in evidence, not assumption. We follow data and clinical evidence, not trends.</p>
+      </div>
+      <div class="value-card">
+        <div class="vi">Ql</div>
+        <h3>Quality, always</h3>
+        <p>Quality is not a department — it is the foundation of everything we manufacture. Compliance is our minimum; excellence is our standard.</p>
+      </div>
+      <div class="value-card">
+        <div class="vi">Et</div>
+        <h3>Ethics, non-negotiable</h3>
+        <p>Integrity is not negotiable — not in our research, not in our practices, not in our relationships with any partner.</p>
+      </div>
+      <div class="value-card">
+        <div class="vi">Pt</div>
+        <h3>Patient-centric</h3>
+        <p>Behind every prescription is a person. We don't just manufacture medicine — we manufacture hope, recovery, and renewed life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper);">
+  <div class="wrap">
+    <div class="story-row">
+      <div class="story-img">
+        <img src="https://thumbs.dreamstime.com/b/scientist-laboratory-medical-equipment-research-experiment-pharmaceutical-development-modern-medical-lab-skilled-369328622.jpg" alt="Researcher examining samples in a pharmaceutical laboratory">
+        <div class="story-tag">JP–01</div>
+      </div>
+      <div class="story-text">
+        <span class="id">Science-oriented</span>
+        <h3>Evidence, not assumption</h3>
+        <p>From bench to bedside, our formulations are grounded in data and clinical evidence. We don't chase trends — we follow the science that saves lives.</p>
+        <p class="quote">"Innovation at Jaks Pharma is measured not by novelty, but by therapeutic value."</p>
+      </div>
+    </div>
+
+    <div class="story-row reverse">
+      <div class="story-img">
+        <img src="https://www.wallpapers.com/images/hd/compassionate-medical-consultation-zb1z47f9zafln89z.jpg" alt="Doctor in a compassionate consultation with a patient">
+        <div class="story-tag">JP–04</div>
+      </div>
+      <div class="story-text">
+        <span class="id">Patient-centric</span>
+        <h3>Behind every prescription, a person</h3>
+        <p>We don't just manufacture medicine — we manufacture hope, recovery, and renewed life. Every decision starts and ends with one question.</p>
+        <p class="quote">"Does this help the patient?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="statement-band" id="science">
+  <div class="ring"></div>
+  <div class="ring2"></div>
+  <div class="wrap">
+    <span class="mark"></span>
+    <h2>Integrity is not negotiable — not in our research, not in our practices, not in our relationships.</h2>
+    <div class="by">— Our code of conduct</div>
+  </div>
+</section>
+
+<section class="quality-section" id="quality">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Quality &amp; ethics</div>
+      <h2>The standard behind every batch.</h2>
+      <p>Trust is built one decision at a time — here's how that shows up in our daily work.</p>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-row">
+        <div class="ledger-id">QC–01</div>
+        <div class="ledger-title">Precision in every batch</div>
+        <div class="ledger-quote">Every batch tells a story of precision, consistency, and uncompromising standards — repeated without exception.</div>
+      </div>
+      <div class="ledger-row">
+        <div class="ledger-id">QC–02</div>
+        <div class="ledger-title">Transparency by default</div>
+        <div class="ledger-quote">We earn trust the only way it can be earned: through transparency, honesty, and accountability.</div>
+      </div>
+      <div class="ledger-row">
+        <div class="ledger-id">QC–03</div>
+        <div class="ledger-title">The quiet promise</div>
+        <div class="ledger-quote">Quality is the quiet promise we keep with every patient who trusts our medicine.</div>
+      </div>
+      <div class="ledger-row">
+        <div class="ledger-id">QC–04</div>
+        <div class="ledger-title">Compliance is the floor</div>
+        <div class="ledger-quote">Compliance is our minimum. Excellence is our standard, on every line, every day.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>Affordable does not mean compromised. We believe quality healthcare is a right, not a privilege — and we measure success not just in growth, but in the lives we've improved along the way.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-top">
+      <img class="footer-logo-img" src="assets/jaks-logo.png" alt="Jaks Pharma logo">
+    </div>
+    <div class="footer-grid">
+      <div>
+        <p style="font-size:13.5px;max-width:260px;opacity:.78;">Science-led, ethics-bound, patient-first. A pharmaceutical company built on evidence, not assumption.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About us</a>
+        <a href="#science">Our science</a>
+        <a href="#quality">Quality charter</a>
+        <a href="#values">Our values</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="#">Research papers</a>
+        <a href="#">Compliance</a>
+        <a href="#">Careers</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="#">info@jakspharma.com</a>
+        <a href="#">+91 22 0000 0000</a>
+        <a href="#">Mumbai, India</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jaks Pharma Private Limited. All rights reserved.</span>
+      <span>Evidence-led. Ethically governed.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

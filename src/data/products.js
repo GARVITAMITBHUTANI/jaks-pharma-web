@@ -6,6 +6,10 @@ import facioxHaImg from '../assets/Faciox HA.jpeg';
 import facioxSbImg from '../assets/Faciox SB.jpeg';
 import relumiaImg from '../assets/Relumia.jpg';
 import kerajaksImg from '../assets/kerajaks hair.png';
+import clinderaImg from '../assets/Clindera.png';
+import flutijaksImg from '../assets/Flutijaks.png';
+import emoluxOcImg from '../assets/emolux oc.svg';
+import nigrinilImg from '../assets/Nigrinil.svg';
 
 export const products = [
   {
@@ -19,6 +23,7 @@ export const products = [
     description: 'Kerajaks is a formulation that is serum-based and enhanced by the potency of natural components. Its irritation-free solution, which has been rigorously tested on both men and women, encourages quick hair growth while nourishing the scalp. It strengthens hair from root to tip and tackles the primary causes of hair loss.',
     indications: 'Telogen Effluvium, Androgenetic alopecia, Re-densification of Hair on Scalp, Male pattern hair loss',
     price: 0.00,
+    stock_quantity: 0,
     image_url: kerajaksImg,
     title_line1: 'Your Hair, ',
     title_highlight1: 'Fortified',
@@ -85,7 +90,7 @@ export const products = [
     indications: 'Uneven Skin Tone, Melasma, Acne, Hyperpigmentation, Skin Radiance, Oily skin',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: emoluxOcImg,
     title_line1: 'Oil ',
     title_highlight1: 'Controlled',
     title_line2: 'Deeply ',
@@ -217,7 +222,7 @@ export const products = [
     indications: 'Hyperpigmentation Associated with Acanthosis Nigricans, Post-Inflammatory Hyperpigmentation (PIH)',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: nigrinilImg,
     title_line1: 'Dark Patches, ',
     title_highlight1: 'Corrected',
     title_line2: 'Skin Renewal, ',
@@ -415,7 +420,7 @@ export const products = [
     indications: 'Eczema, Dermatitis, Allergic Skin Reactions, Itching & Redness, Scalp psoriasis',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: flutijaksImg,
     title_line1: 'Inflammation, ',
     title_highlight1: 'Soothed',
     title_line2: 'Rapid ',
@@ -437,7 +442,7 @@ export const products = [
     indications: 'Acne Vulgaris, Inflammatory Acne, Acne Marks, Grade I to Grade II Acne Vulgaris',
     price: 0.00,
     stock_quantity: 0,
-    image_url: '',
+    image_url: clinderaImg,
     title_line1: 'Acne, ',
     title_highlight1: 'Cleared',
     title_line2: 'Skin Texture, ',
