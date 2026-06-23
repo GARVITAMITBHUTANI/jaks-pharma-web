@@ -67,12 +67,12 @@ const ProductDetail = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Back Button */}
-        <a href="/#products" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-medium mb-8 sm:mb-12 transition-colors border-none bg-transparent cursor-pointer">
+        <Link to="/products" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-medium mb-8 sm:mb-12 transition-colors border-none bg-transparent cursor-pointer">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Products
-        </a>
+        </Link>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           
@@ -86,9 +86,6 @@ const ProductDetail = () => {
                 src={mainImage} 
                 alt={product.name} 
                 className="w-full h-full object-contain relative z-10 transition-all duration-700 hover:scale-105"
-                style={{
-                  mixBlendMode: 'multiply'
-                }}
               />
               {/* Optional Pause/Play pill like Devonia */}
               <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm flex items-center gap-2 font-bold text-sm text-slate-800 z-20">
