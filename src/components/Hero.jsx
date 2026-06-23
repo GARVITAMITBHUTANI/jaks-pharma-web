@@ -23,12 +23,12 @@ const slides = [
     customComponent: () => (
       <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-8 bg-[#FAF2F2]/30">
         <div className="w-full max-w-md lg:max-w-lg bg-white rounded-xl shadow-[0_30px_70px_-25px_rgba(10,103,144,0.35)] overflow-hidden border border-gray-200 transform hover:scale-105 transition-transform duration-500">
-          <div className="bg-[#0A6790] text-white p-6 sm:p-8 flex justify-between items-center">
+          <div className="bg-white text-[#111827] p-6 sm:p-8 flex justify-between items-center border-b border-gray-100">
             <div>
-              <div className="font-mono text-xs tracking-widest uppercase opacity-70">Certificate of Standards</div>
+              <div className="font-mono text-xs tracking-widest uppercase text-[#5C6B7A]">Certificate of Standards</div>
               <div className="font-bold text-lg sm:text-xl mt-1.5 tracking-tight">Jaks Pharma — Quality Charter</div>
             </div>
-            <div className="font-mono text-xs text-[#9FE0FA] text-right">REF / 2026-JP</div>
+            <div className="font-mono text-xs text-[#5C6B7A] text-right">REF / 2026-JP</div>
           </div>
           <div className="p-6 sm:p-8">
             {[
@@ -278,27 +278,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* BRAND METRICS STRIP */}
-      <div className="w-full bg-white border-t border-gray-100 relative z-20 shadow-[0_-5px_20px_-15px_rgba(0,0,0,0.1)]">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-100 border-b border-gray-100">
-          <div className="px-6 py-8 sm:px-10 border-b lg:border-b-0 border-gray-100 hover:bg-slate-50 transition-colors">
-            <div className="text-3xl lg:text-[2.5rem] font-extrabold text-[#074A68] tracking-tight leading-none mb-1">100<span className="text-[#F37021]">%</span></div>
-            <div className="text-[13px] text-[#5C6B7A] font-medium leading-snug">Evidence-led formulation</div>
-          </div>
-          <div className="px-6 py-8 sm:px-10 border-b lg:border-b-0 border-gray-100 hover:bg-slate-50 transition-colors">
-            <div className="text-3xl lg:text-[2.5rem] font-extrabold text-[#074A68] tracking-tight leading-none mb-1 flex items-baseline">0<span className="text-base lg:text-lg text-[#F37021] ml-1.5 tracking-normal font-bold">deviations</span></div>
-            <div className="text-[13px] text-[#5C6B7A] font-medium leading-snug">tolerated in ethical conduct</div>
-          </div>
-          <div className="px-6 py-8 sm:px-10 hover:bg-slate-50 transition-colors">
-            <div className="text-3xl lg:text-[2.5rem] font-extrabold text-[#074A68] tracking-tight leading-none mb-1">1<span className="text-[#F37021]">st</span></div>
-            <div className="text-[13px] text-[#5C6B7A] font-medium leading-snug">Question: does this help the patient?</div>
-          </div>
-          <div className="px-6 py-8 sm:px-10 hover:bg-slate-50 transition-colors">
-            <div className="text-3xl lg:text-[2.5rem] font-extrabold text-[#074A68] tracking-tight leading-none mb-1">A<span className="text-[#F37021]">ccess</span></div>
-            <div className="text-[13px] text-[#5C6B7A] font-medium leading-snug">Quality healthcare, not a privilege</div>
-          </div>
-        </div>
-      </div>
+
 
     </section>
   );
