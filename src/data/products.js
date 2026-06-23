@@ -34,12 +34,10 @@ import lulijaksPhoto from '../assets/Jaks product photos/LULIJAKS MAX.jpeg';
 import kerajaksMPhoto from '../assets/Jaks product photos/KERAJAKS M TAB.jpeg';
 
 
-import emoluxOcSvg from '../assets/emolux oc.svg';
-import nigrinilSvg from '../assets/Nigrinil.svg';
-import facioxUvSvg from '../assets/Faciox uv.svg';
-import facioxSbSvg from '../assets/faciox sb.svg';
 import clinderaSvg from '../assets/clindera n.svg';
 import relumiaSvg from '../assets/relumia.svg';
+import emoluxOcSvg from '../assets/emolux oc.svg';
+import nigrinilSvg from '../assets/Nigrinil.svg';
 
 export const products = [
   {
