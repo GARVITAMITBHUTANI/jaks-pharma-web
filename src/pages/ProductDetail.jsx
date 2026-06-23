@@ -105,14 +105,10 @@ const ProductDetail = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-4">
-              <div className="border border-gray-100 rounded-xl p-4 bg-[#F9FAFB]">
-                <div className="text-xs text-[#6B7280] font-medium mb-1">Product Code</div>
-                <div className="font-bold text-[#111827] text-sm truncate">{product.product_code}</div>
-              </div>
-              <div className="border border-gray-100 rounded-xl p-4 bg-[#F9FAFB]">
-                <div className="text-xs text-[#6B7280] font-medium mb-1">Packaging</div>
-                <div className="font-bold text-[#111827] text-sm truncate">{product.packaging}</div>
+            <div className="flex">
+              <div className="w-full border border-gray-100 rounded-xl p-5 bg-[#F9FAFB]">
+                <div className="text-sm text-[#6B7280] font-medium mb-2">Packaging</div>
+                <div className="font-bold text-[#111827] text-lg">{product.packaging}</div>
               </div>
             </div>
           </div>
