@@ -23,7 +23,7 @@ const slides = [
     customComponent: () => (
       <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-8 bg-[#FAF2F2]/30">
         <div className="w-full max-w-md lg:max-w-lg bg-white rounded-xl shadow-[0_30px_70px_-25px_rgba(10,103,144,0.35)] overflow-hidden border border-gray-200 transform hover:scale-105 transition-transform duration-500">
-          <div className="bg-white text-[#111827] p-6 sm:p-8 flex justify-between items-center border-b border-gray-100">
+          <div className="bg-[#FAF2F2] text-[#111827] p-6 sm:p-8 flex justify-between items-center border-b border-gray-100">
             <div>
               <div className="font-mono text-xs tracking-widest uppercase text-[#5C6B7A]">Certificate of Standards</div>
               <div className="font-bold text-lg sm:text-xl mt-1.5 tracking-tight">Jaks Pharma — Quality Charter</div>
@@ -248,17 +248,7 @@ const Hero = () => {
             </div>
           )}
 
-          {/* Floating Stat Card 1 */}
-          <div className="absolute left-4 bottom-4 sm:left-6 sm:bottom-6 bg-white border border-gray-100 px-4 py-2 sm:px-5 sm:py-2.5 rounded-none z-20 shadow-sm">
-            <div className="text-lg sm:text-xl font-black text-[#00529B] leading-none">{slide.stats1}</div>
-            <div className="text-[9px] font-medium text-slate-500 mt-0.5 leading-none">{slide.stats1Label}</div>
-          </div>
 
-          {/* Floating Stat Card 2 */}
-          <div className="absolute right-4 top-4 sm:right-6 sm:top-6 bg-white border border-gray-100 px-4 py-2 sm:px-5 sm:py-2.5 rounded-none z-20 shadow-sm">
-            <div className="text-lg sm:text-xl font-black text-[#F37021] leading-none">{slide.stats2}</div>
-            <div className="text-[9px] font-medium text-slate-500 mt-0.5 leading-none">{slide.stats2Label}</div>
-          </div>
         </div>
 
       </div>
