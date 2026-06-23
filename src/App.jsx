@@ -9,6 +9,8 @@ import Articles from './pages/Articles';
 import FAQ from './pages/FAQ';
 import ExpertAdvice from './pages/ExpertAdvice';
 import WhatsAppButton from './components/WhatsAppButton';
+import MissionStatement from './pages/MissionStatement';
+
 function App() {
   return (
     <Router>
@@ -21,6 +23,7 @@ function App() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/expert-advice" element={<ExpertAdvice />} />
+          <Route path="/mission" element={<MissionStatement />} />
         </Routes>
         <WhatsAppButton />
         <Footer />

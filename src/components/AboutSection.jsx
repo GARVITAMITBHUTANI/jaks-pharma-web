@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -17,10 +18,13 @@ const About = () => {
             </h2>
           </div>
           <div className="lg:pt-2">
-            <p className="text-xs sm:text-sm leading-relaxed text-slate-600 font-sans">
+            <p className="text-xs sm:text-sm leading-relaxed text-slate-600 font-sans mb-6">
               Not slogans on a wall — the standard every formulation, decision, and relationship is measured against.
               Behind every prescription is a person, and our commitment to science, quality, and ethics ensures we never compromise on patient outcomes.
             </p>
+            <Link to="/mission" className="inline-flex items-center justify-center bg-[#00529B] text-white hover:bg-[#003E75] transition-all duration-200 px-6 py-3 text-xs sm:text-sm font-semibold shadow-sm border-none cursor-pointer">
+              Read our full mission statement
+            </Link>
           </div>
         </div>
 
