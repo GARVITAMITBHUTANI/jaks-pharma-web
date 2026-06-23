@@ -67,12 +67,12 @@ const ProductDetail = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Back Button */}
-        <button onClick={() => navigate(-1)} className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-medium mb-8 sm:mb-12 transition-colors">
+        <Link to="/#products" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-medium mb-8 sm:mb-12 transition-colors">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Products
-        </button>
+        </Link>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           
@@ -156,15 +156,9 @@ const ProductDetail = () => {
                   <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Indications</h4>
                   <p className="text-slate-700 font-medium">{product.indications}</p>
                 </div>
-                <div className="grid grid-cols-2 gap-4 pt-5 border-t border-slate-200/60">
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Product Code</h4>
-                    <p className="text-slate-700 font-medium">{product.product_code}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Packaging</h4>
-                    <p className="text-slate-700 font-medium">{product.packaging}</p>
-                  </div>
+                <div className="pt-5 border-t border-slate-200/60">
+                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">Packaging</h4>
+                  <p className="text-slate-700 font-medium">{product.packaging}</p>
                 </div>
               </div>
             </div>
