@@ -28,7 +28,6 @@ const slides = [
               <div className="font-mono text-xs tracking-widest uppercase text-[#5C6B7A]">Certificate of Standards</div>
               <div className="font-bold text-lg sm:text-xl mt-1.5 tracking-tight">Jaks Pharma — Quality Charter</div>
             </div>
-            <div className="font-mono text-xs text-[#5C6B7A] text-right">REF / 2026-JP</div>
           </div>
           <div className="p-6 sm:p-8">
             {[
