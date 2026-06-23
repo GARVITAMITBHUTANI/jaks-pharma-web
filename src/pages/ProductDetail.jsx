@@ -67,32 +67,31 @@ const ProductDetail = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Back Button */}
-        <Link to="/#products" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-medium mb-8 sm:mb-12 transition-colors border-none bg-transparent cursor-pointer">
+        <a href="/#products" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-medium mb-8 sm:mb-12 transition-colors border-none bg-transparent cursor-pointer">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Products
-        </Link>
+        </a>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           
-          {/* LEFT SIDE - IMAGE */}
+          {/* LEFT SIDE - IMAGE GALLERY */}
           <div className="w-full lg:w-[45%] flex flex-col gap-4">
             <div 
               className="aspect-[3/4] rounded-3xl flex items-center justify-center p-8 sm:p-12 relative overflow-hidden group shadow-sm border border-white/40 transition-colors duration-700"
               style={{ backgroundColor: theme.cardPastel }}
             >
-              {/* Devonia 'circlish' white backdrop to prevent the pastel color from darkening the photo */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] aspect-square rounded-full bg-white opacity-95 pointer-events-none transition-transform duration-700 group-hover:scale-105"></div>
-              
               <img 
                 src={mainImage} 
                 alt={product.name} 
-                className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-110 relative z-10" 
+                className="w-full h-full object-contain relative z-10 transition-all duration-700 hover:scale-105"
+                style={{
+                  mixBlendMode: 'multiply'
+                }}
               />
-              
               {/* Optional Pause/Play pill like Devonia */}
-              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm flex items-center gap-2 font-bold text-sm text-slate-800">
+              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm flex items-center gap-2 font-bold text-sm text-slate-800 z-20">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>
                 </svg>
