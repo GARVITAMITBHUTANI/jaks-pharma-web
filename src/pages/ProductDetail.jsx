@@ -82,10 +82,13 @@ const ProductDetail = () => {
               className="aspect-[3/4] rounded-3xl flex items-center justify-center p-8 sm:p-12 relative overflow-hidden group shadow-sm border border-white/40 transition-colors duration-700"
               style={{ backgroundColor: theme.cardPastel }}
             >
+              {/* Devonia 'circlish' white backdrop to prevent the pastel color from darkening the photo */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] aspect-square rounded-full bg-white opacity-95 pointer-events-none transition-transform duration-700 group-hover:scale-105"></div>
+              
               <img 
                 src={mainImage} 
                 alt={product.name} 
-                className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-105" 
+                className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 hover:scale-110 relative z-10" 
               />
               
               {/* Optional Pause/Play pill like Devonia */}
@@ -117,7 +120,7 @@ const ProductDetail = () => {
             <div className="flex items-center gap-4 mb-3">
               <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm border border-orange-100/50 flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={theme.primary} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
                 </svg>
               </div>
               <h1 
