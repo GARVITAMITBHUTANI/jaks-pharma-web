@@ -36,62 +36,22 @@ const ProductDetail = () => {
     );
   }
 
-  const getProductColor = (code) => {
-    const colors = {
-      'KERA01': '#2b2b29',
-      'FACIOXUV': '#F37021',
-      'FACIOXFW': '#38BDF8',
-      'FACIOXSB': '#FDBA74',
-      'FACIOXHA': '#60A5FA',
-      'FACIOXVITC': '#FCD34D',
-      'EGLANCEEYE': '#34D399',
-      'RELUMIA': '#A78BFA',
-      'CLINDERAN': '#F472B6',
-      'NIGRINIL': '#FB7185',
-      'FLUTIJAKSCREAM': '#60A5FA',
-      'FLUTIJAKSLOTION': '#60A5FA',
-      'KERAJAKSM': '#2b2b29',
-      'EMOLUXOC': '#4ADE80',
-    };
-    return colors[code] || '#F9FAFB';
-  };
-
-  const bgColor = getProductColor(product.product_code);
-
   return (
-    <main 
-      className="py-24 lg:py-32 min-h-screen relative overflow-hidden transition-colors duration-700"
-      style={{ backgroundColor: bgColor }}
-    >
-      {/* Dynamic Ambient Background */}
-      {product.image_url && (
-        <div 
-          className="absolute inset-0 z-0 opacity-40 blur-[80px] scale-150 transform-gpu pointer-events-none mix-blend-overlay" 
-          style={{ 
-            backgroundImage: `url(${product.image_url})`, 
-            backgroundSize: 'contain', 
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }} 
-        />
-      )}
-      <div className="absolute inset-0 z-0 bg-black/5 pointer-events-none"></div>
-
+    <main className="py-24 lg:py-32 min-h-screen relative overflow-hidden bg-[#F9FAFB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Back Button */}
-        <Link to="/products" className="inline-flex items-center gap-2 text-slate-800 hover:text-black font-semibold mb-8 sm:mb-12 transition-colors border-none bg-white/50 backdrop-blur-md px-6 py-3 rounded-full shadow-sm cursor-pointer hover:bg-white/80">
+        <a href="/products" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold mb-8 sm:mb-12 transition-colors border border-gray-200 bg-white px-6 py-3 rounded-full shadow-sm cursor-pointer hover:bg-gray-50">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Products
-        </Link>
+        </a>
 
-        <div className="bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 lg:p-12 shadow-xl border border-white/50 flex flex-col lg:flex-row gap-12 items-center">
+        <div className="bg-white rounded-[2rem] p-8 lg:p-12 shadow-xl border border-gray-100 flex flex-col lg:flex-row gap-12 items-center">
           
           <div className="w-full lg:w-1/2 flex flex-col gap-4">
-            <div className="aspect-square bg-white border border-gray-100 rounded-[1.5rem] flex items-center justify-center p-8 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#FAF2F2] rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="aspect-square bg-[#F9FAFB] border border-gray-100 rounded-[1.5rem] flex items-center justify-center p-8 relative overflow-hidden group">
               <img 
                 src={(product.images && product.images[activeImage]) || (!product.images && activeImage === 0 ? product.image_url : '') || 'https://placehold.co/600x600/FAF2F2/00529B?text=Coming+Soon'} 
                 alt={product.name} 
