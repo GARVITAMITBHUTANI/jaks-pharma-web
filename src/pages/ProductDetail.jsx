@@ -67,12 +67,12 @@ const ProductDetail = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Back Button */}
-        <button onClick={() => { window.location.href = '/#products'; }} className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-medium mb-8 sm:mb-12 transition-colors border-none bg-transparent cursor-pointer">
+        <Link to="/products" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-medium mb-8 sm:mb-12 transition-colors border-none bg-transparent cursor-pointer">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Products
-        </button>
+        </Link>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           
@@ -118,11 +118,6 @@ const ProductDetail = () => {
           {/* RIGHT SIDE - CONTENT */}
           <div className="w-full lg:w-[55%] lg:pt-6">
             <div className="flex items-center gap-4 mb-3">
-              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm border border-orange-100/50 flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={theme.primary} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-                </svg>
-              </div>
               <h1 
                 className="text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight transition-colors duration-700"
                 style={{ color: theme.primary }}
