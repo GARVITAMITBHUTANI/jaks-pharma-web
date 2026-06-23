@@ -10,6 +10,8 @@ import clinderaImg from '../assets/Clindera.png';
 import flutijaksImg from '../assets/Flutijaks.png';
 import emoluxOcImg from '../assets/emolux oc.svg';
 import nigrinilImg from '../assets/Nigrinil.svg';
+import facioxUvSvg from '../assets/Faciox uv.svg';
+import facioxSbSvg from '../assets/faciox sb.svg';
 
 export const products = [
   {
@@ -46,7 +48,8 @@ export const products = [
     indications: 'Anti-UV+ IR+ Blue Light, Anti-Pollution, Broad Spectrum Protection, Sunburn, SunTan, Premature Ageing',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxUvImg,
+    image_url: facioxUvSvg,
+    images: [facioxUvSvg, facioxUvImg],
     title_line1: 'Science ',
     title_highlight1: 'Backed',
     title_line2: 'Skin ',
@@ -134,7 +137,8 @@ export const products = [
     indications: 'Hyperpigmentation, uneven skin tone, Melasma, Skin Radiance, Photoageing, Post-inflammatory hyperpigmentation (PIH)',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxSbImg,
+    image_url: facioxSbSvg,
+    images: [facioxSbSvg, facioxSbImg],
     title_line1: 'Luminous ',
     title_highlight1: 'Radiance',
     title_line2: 'Flawless ',
