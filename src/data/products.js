@@ -33,6 +33,14 @@ import jaksitSbPhoto from '../assets/Jaks product photos/JAKSIT SB 130.jpeg';
 import lulijaksPhoto from '../assets/Jaks product photos/LULIJAKS MAX.jpeg';
 import kerajaksMPhoto from '../assets/Jaks product photos/KERAJAKS M TAB.jpeg';
 
+
+import emoluxOcSvg from '../assets/emolux oc.svg';
+import nigrinilSvg from '../assets/Nigrinil.svg';
+import facioxUvSvg from '../assets/Faciox uv.svg';
+import facioxSbSvg from '../assets/faciox sb.svg';
+import clinderaSvg from '../assets/clindera n.svg';
+import relumiaSvg from '../assets/relumia.svg';
+
 export const products = [
   {
     id: 1,
@@ -68,7 +76,7 @@ export const products = [
     indications: 'Anti-UV+ IR+ Blue Light, Anti-Pollution, Broad Spectrum Protection, Sunburn, SunTan, Premature Ageing',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxUvPhoto, images: [facioxUvPhoto, facioxUvSvg],
+    image_url: facioxUvSvg, images: [facioxUvSvg, facioxUvPhoto],
     title_line1: 'Science ',
     title_highlight1: 'Backed',
     title_line2: 'Skin ',
@@ -112,7 +120,7 @@ export const products = [
     indications: 'Uneven Skin Tone, Melasma, Acne, Hyperpigmentation, Skin Radiance, Oily skin',
     price: 0.00,
     stock_quantity: 0,
-    image_url: emoluxOcPhoto, images: [emoluxOcPhoto, emoluxOcImg],
+    image_url: emoluxOcSvg, images: [emoluxOcSvg, emoluxOcPhoto],
     title_line1: 'Oil ',
     title_highlight1: 'Controlled',
     title_line2: 'Deeply ',
@@ -156,7 +164,7 @@ export const products = [
     indications: 'Hyperpigmentation, uneven skin tone, Melasma, Skin Radiance, Photoageing, Post-inflammatory hyperpigmentation (PIH)',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxSbPhoto, images: [facioxSbPhoto, facioxSbSvg],
+    image_url: facioxSbSvg, images: [facioxSbSvg, facioxSbPhoto],
     title_line1: 'Luminous ',
     title_highlight1: 'Radiance',
     title_line2: 'Flawless ',
@@ -244,7 +252,7 @@ export const products = [
     indications: 'Hyperpigmentation Associated with Acanthosis Nigricans, Post-Inflammatory Hyperpigmentation (PIH)',
     price: 0.00,
     stock_quantity: 0,
-    image_url: nigrinilPhoto, images: [nigrinilPhoto, nigrinilImg],
+    image_url: nigrinilSvg, images: [nigrinilSvg, nigrinilPhoto],
     title_line1: 'Dark Patches, ',
     title_highlight1: 'Corrected',
     title_line2: 'Skin Renewal, ',
@@ -420,7 +428,7 @@ export const products = [
     indications: 'Dull Skin & Uneven Skin Tone, Hyperpigmentation, Melasma, Oxidative Stress-related Skin Damage',
     price: 0.00,
     stock_quantity: 0,
-    image_url: relumiaPhoto, images: [relumiaPhoto, relumiaImg],
+    image_url: relumiaSvg, images: [relumiaSvg, relumiaPhoto],
     title_line1: 'Radiant ',
     title_highlight1: 'Glow',
     title_line2: 'Pigmentation ',
@@ -464,7 +472,7 @@ export const products = [
     indications: 'Acne Vulgaris, Inflammatory Acne, Acne Marks, Grade I to Grade II Acne Vulgaris',
     price: 0.00,
     stock_quantity: 0,
-    image_url: clinderaPhoto, images: [clinderaPhoto, clinderaImg],
+    image_url: clinderaSvg, images: [clinderaSvg, clinderaPhoto],
     title_line1: 'Acne, ',
     title_highlight1: 'Cleared',
     title_line2: 'Skin Texture, ',
