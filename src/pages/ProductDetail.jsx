@@ -41,12 +41,12 @@ const ProductDetail = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Back Button */}
-        <button onClick={() => navigate('/', { state: { scrollTo: 'products' } })} className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold mb-8 sm:mb-12 transition-colors border border-gray-200 bg-white px-6 py-3 rounded-full shadow-sm cursor-pointer hover:bg-gray-50">
+        <Link to="/products" className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold mb-8 sm:mb-12 transition-colors border border-gray-200 bg-white px-6 py-3 rounded-full shadow-sm cursor-pointer hover:bg-gray-50">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Products
-        </button>
+        </Link>
 
         <div className="bg-white rounded-[2rem] p-8 lg:p-12 shadow-xl border border-gray-100 flex flex-col lg:flex-row gap-12 items-center">
           
