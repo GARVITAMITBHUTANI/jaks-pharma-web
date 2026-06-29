@@ -40,8 +40,8 @@ const Navbar = () => {
     }
 
     const sectionId = link.href;
-    // Always navigate to update the URL so browser history works perfectly
-    navigate('/#' + sectionId);
+    // Use state-based navigation for 100% reliable scrolling in Home.jsx
+    navigate('/', { state: { scrollTo: sectionId } });
   };
 
   const scrollToTop = () => {
