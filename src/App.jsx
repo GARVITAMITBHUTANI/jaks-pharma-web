@@ -19,7 +19,6 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/article/:id" element={<ArticleDetail />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/faq" element={<FAQ />} />
