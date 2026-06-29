@@ -21,7 +21,7 @@ const Home = () => {
         const el = document.querySelector(targetHash);
         if (el) {
           const y = el.getBoundingClientRect().top + window.scrollY - 100; // Account for navbar
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          window.scrollTo({ top: y, behavior: 'auto' });
           return; // Success, stop polling
         }
       } else {
