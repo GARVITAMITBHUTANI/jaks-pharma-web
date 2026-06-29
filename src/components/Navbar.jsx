@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import logoSvg from '../assets/Jaks favicon.svg';
+import logoSvg from '../assets/LOGO JAKS (CDR) (1).svg';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
