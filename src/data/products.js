@@ -39,6 +39,18 @@ import relumiaSvg from '../assets/relumia.svg';
 import emoluxOcSvg from '../assets/emolux oc.svg';
 import nigrinilSvg from '../assets/Nigrinil.svg';
 
+
+import eglanceUpPhoto from '../assets/updated photos/Eglance.png';
+import emoluxBarUpPhoto from '../assets/updated photos/Emolux body bar.png';
+import facioxCUpPhoto from '../assets/updated photos/Faciox C.png';
+import facioxHAUpPhoto from '../assets/updated photos/Faciox HA.png';
+import facioxFWUpPhoto from '../assets/updated photos/Faciox face wash.png';
+import flutijaksCreamUpPhoto from '../assets/updated photos/Flutijaks Cream.png';
+import flutijaksLotionUpPhoto from '../assets/updated photos/Flutijaks lotion.png';
+import kerajaksMUpPhoto from '../assets/updated photos/Kerajaks M.png';
+import kerajaksHairUpPhoto from '../assets/updated photos/Kerajaks hair serum.png';
+import lulijaksUpPhoto from '../assets/updated photos/Lulijaks.png';
+
 export const products = [
   {
     id: 1,
@@ -52,7 +64,7 @@ export const products = [
     indications: 'Telogen Effluvium, Androgenetic alopecia, Re-densification of Hair on Scalp, Male pattern hair loss',
     price: 0.00,
     stock_quantity: 0,
-    image_url: kerajaksPhoto, images: [kerajaksPhoto, kerajaksImg],
+    image_url: kerajaksImg,
     title_line1: 'Your Hair, ',
     title_highlight1: 'Fortified',
     title_line2: 'Root ',
@@ -74,7 +86,7 @@ export const products = [
     indications: 'Anti-UV+ IR+ Blue Light, Anti-Pollution, Broad Spectrum Protection, Sunburn, SunTan, Premature Ageing',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxUvSvg, images: [facioxUvSvg, facioxUvPhoto],
+    image_url: facioxUvSvg,
     title_line1: 'Science ',
     title_highlight1: 'Backed',
     title_line2: 'Skin ',
@@ -96,7 +108,7 @@ export const products = [
     indications: 'Uneven Skin Tone, Melasma, Acne, Hyperpigmentation, Skin Radiance, Oily skin',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxFwPhoto, images: [facioxFwPhoto, facioxFwImg],
+    image_url: facioxFWUpPhoto,
     title_line1: 'Deeply ',
     title_highlight1: 'Cleansed',
     title_line2: 'Flawlessly ',
@@ -118,7 +130,7 @@ export const products = [
     indications: 'Uneven Skin Tone, Melasma, Acne, Hyperpigmentation, Skin Radiance, Oily skin',
     price: 0.00,
     stock_quantity: 0,
-    image_url: emoluxOcSvg, images: [emoluxOcSvg, emoluxOcPhoto],
+    image_url: emoluxOcSvg,
     title_line1: 'Oil ',
     title_highlight1: 'Controlled',
     title_line2: 'Deeply ',
@@ -162,7 +174,7 @@ export const products = [
     indications: 'Hyperpigmentation, uneven skin tone, Melasma, Skin Radiance, Photoageing, Post-inflammatory hyperpigmentation (PIH)',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxSbSvg, images: [facioxSbSvg, facioxSbPhoto],
+    image_url: facioxSbSvg,
     title_line1: 'Luminous ',
     title_highlight1: 'Radiance',
     title_line2: 'Flawless ',
@@ -184,7 +196,7 @@ export const products = [
     indications: 'Wrinkles, Fine lines, Premature Ageing, Dry skin',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxHaPhoto, images: [facioxHaPhoto, facioxHaImg],
+    image_url: facioxHAUpPhoto,
     title_line1: 'Deeply ',
     title_highlight1: 'Plumped',
     title_line2: 'Intensely ',
@@ -206,7 +218,7 @@ export const products = [
     indications: 'Dark circles, Crow’s feet and puffiness',
     price: 0.00,
     stock_quantity: 0,
-    image_url: eglancePhoto, images: [eglancePhoto, eglanceImg],
+    image_url: eglanceUpPhoto,
     title_line1: 'Tired Eyes, ',
     title_highlight1: 'Revitalized',
     title_line2: 'Dark Circles, ',
@@ -228,7 +240,7 @@ export const products = [
     indications: 'Wrinkles, Hyperpigmentation, Premature Ageing, Crow\'s Feet',
     price: 0.00,
     stock_quantity: 0,
-    image_url: facioxVitCPhoto, images: [facioxVitCPhoto, facioxVitCImg],
+    image_url: facioxCUpPhoto,
     title_line1: 'Pure ',
     title_highlight1: 'Antioxidant',
     title_line2: 'Radiant ',
@@ -250,7 +262,7 @@ export const products = [
     indications: 'Hyperpigmentation Associated with Acanthosis Nigricans, Post-Inflammatory Hyperpigmentation (PIH)',
     price: 0.00,
     stock_quantity: 0,
-    image_url: nigrinilSvg, images: [nigrinilSvg, nigrinilPhoto],
+    image_url: nigrinilSvg,
     title_line1: 'Dark Patches, ',
     title_highlight1: 'Corrected',
     title_line2: 'Skin Renewal, ',
@@ -272,7 +284,7 @@ export const products = [
     indications: 'For general body dryness, Sensitive or Irritated Skin profiles',
     price: 0.00,
     stock_quantity: 0,
-    image_url: emoluxBarPhoto,
+    image_url: emoluxBarUpPhoto,
     title_line1: 'Naturally ',
     title_highlight1: 'Nourished',
     title_line2: 'Gentle ',
@@ -360,7 +372,7 @@ export const products = [
     indications: 'Covers broad range of Tinea infection',
     price: 0.00,
     stock_quantity: 0,
-    image_url: lulijaksPhoto,
+    image_url: lulijaksUpPhoto,
     title_line1: 'Advanced ',
     title_highlight1: 'Protection',
     title_line2: 'Nano-Silver ',
@@ -382,7 +394,7 @@ export const products = [
     indications: 'Atopic Dermatitis, Psoriasis & Vitiligo',
     price: 0.00,
     stock_quantity: 0,
-    image_url: flutijaksPhoto,
+    image_url: flutijaksCreamUpPhoto,
     title_line1: 'Inflammation, ',
     title_highlight1: 'Soothed',
     title_line2: 'Rapid ',
@@ -404,7 +416,7 @@ export const products = [
     indications: 'Androgenetic alopecia, Telogen effluvium, Post partum and post menopausal hair thinning',
     price: 0.00,
     stock_quantity: 0,
-    image_url: kerajaksMPhoto,
+    image_url: kerajaksMUpPhoto,
     title_line1: 'Hair Regrowth, ',
     title_highlight1: 'Stimulated',
     title_line2: 'Systemic ',
@@ -426,7 +438,7 @@ export const products = [
     indications: 'Dull Skin & Uneven Skin Tone, Hyperpigmentation, Melasma, Oxidative Stress-related Skin Damage',
     price: 0.00,
     stock_quantity: 0,
-    image_url: relumiaSvg, images: [relumiaSvg, relumiaPhoto],
+    image_url: relumiaSvg,
     title_line1: 'Radiant ',
     title_highlight1: 'Glow',
     title_line2: 'Pigmentation ',
@@ -470,7 +482,7 @@ export const products = [
     indications: 'Acne Vulgaris, Inflammatory Acne, Acne Marks, Grade I to Grade II Acne Vulgaris',
     price: 0.00,
     stock_quantity: 0,
-    image_url: clinderaSvg, images: [clinderaSvg, clinderaPhoto],
+    image_url: clinderaSvg,
     title_line1: 'Acne, ',
     title_highlight1: 'Cleared',
     title_line2: 'Skin Texture, ',

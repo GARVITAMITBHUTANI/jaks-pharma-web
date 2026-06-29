@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoSvg from '../assets/LOGO JAKS (CDR) (1).svg';
+import logoSvg from '../assets/Jaks favicon.svg';
 
 const Footer = () => {
   return (

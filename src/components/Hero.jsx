@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Relative imports targeting your local assets folder cleanly
 import relumiaImg from '../assets/Relumia.png';
 import flutijaksLotionImg from '../assets/Flutijaks.png';
-import logoSvg from '../assets/LOGO JAKS (CDR) (1).svg';
+import logoSvg from '../assets/Jaks favicon.svg';
 import relumiaSvg from '../assets/relumia.svg';
 import emoluxOcSvg from '../assets/emolux oc.svg';
 import nigrinilSvg from '../assets/Nigrinil.svg';
