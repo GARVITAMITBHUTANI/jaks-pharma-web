@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { products, productCategories } from '../data/products';
+import ProductModal from './ProductModal';
 
 const ProductShowcase = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const filteredProducts = activeCategory === "All" 
     ? products 
@@ -42,10 +43,10 @@ const ProductShowcase = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
           {filteredProducts.map((product, index) => (
-            <Link 
+            <button 
               key={product.id} 
-              to={`/product/${product.id}`}
-              className={`group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 delay-${index * 100} flex flex-col h-full`}
+              onClick={() => setSelectedProduct(product)}
+              className={`group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 delay-${index * 100} flex flex-col h-full text-left`}
             >
               <div className="relative aspect-square p-6 bg-gradient-to-br from-[#FAF2F2] to-white flex items-center justify-center">
                 <img 
@@ -72,7 +73,7 @@ const ProductShowcase = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            </button>
           ))}
         </div>
 
@@ -84,6 +85,13 @@ const ProductShowcase = () => {
           </div>
         )}
       </div>
+      {/* Render the sleek modal! */}
+      {selectedProduct && (
+        <ProductModal 
+          product={selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
+      )}
     </section>
   );
 };
