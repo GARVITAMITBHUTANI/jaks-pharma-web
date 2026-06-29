@@ -405,6 +405,28 @@ export const products = [
     stats2_label: 'Cream'
   },
   {
+    id: 19,
+    product_code: 'FLUTIJAKS',
+    name: 'FLUTIJAKS LOTION',
+    tagline: 'Targeted Anti-Inflammatory Relief',
+    composition: 'Fluticasone Propionate 0.05% w/w',
+    packaging: '30 ml Lotion',
+    therapy_area: 'Clinical Care',
+    description: 'Fluticasone is a potent steroid that reduces inflammation, redness, and itching caused by eczema, psoriasis, or vitiligo. With its vasoconstrictive, anti-inflammatory, and anti-pruritic effects, Flutijaks provides high potency targeted action, faster symptom relief, and a highly favorable safety profile for topical use.',
+    indications: 'Atopic Dermatitis, Psoriasis & Vitiligo',
+    price: 0.00,
+    stock_quantity: 0,
+    image_url: flutijaksLotionUpPhoto,
+    title_line1: 'Inflammation, ',
+    title_highlight1: 'Soothed',
+    title_line2: 'Rapid ',
+    title_highlight2: 'Relief',
+    stats1: '0.05%',
+    stats1_label: 'Potency',
+    stats2: '30ml',
+    stats2_label: 'Lotion'
+  },
+  {
     id: 17,
     product_code: 'KERAJAKSM',
     name: 'KERAJAKS M TABLETS',
